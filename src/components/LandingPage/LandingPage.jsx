@@ -27,7 +27,7 @@ function LandingPage() {
           Login
         </button>
         <h4>Need to Register?</h4>
-        <button className='btn btn_sizeSm' onClick={onLogin}>
+        <button className='btn btn_sizeSm' onClick={onRegister}>
           Register
         </button>
       </center>
