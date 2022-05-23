@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import AuditionItem from '../AuditionItem/AuditionItem';
 
 function AuditionsList() {
   const dispatch = useDispatch();
@@ -13,16 +14,10 @@ function AuditionsList() {
 
   return (
     <>
-      <h2>Upcoming Auditions</h2>
       <div>
         <ul>
           {auditions.map((audition) => {
-            return (
-              <li key={audition.id}>
-                <p>Theatre: {audition.theatre}</p>
-                <p>Show: {audition.show}</p>
-              </li>
-            );
+            return <AuditionItem key={audition.id} audition={audition} />;
           })}
         </ul>
       </div>
