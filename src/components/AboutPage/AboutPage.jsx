@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './AboutPage.css';
 // This is one of our simplest components
 // It doesn't have local state,
 // It doesn't dispatch any redux actions or display any part of redux state
@@ -7,9 +7,14 @@ import React from 'react';
 
 function AboutPage() {
   return (
-    <div className="container">
+    <div className='about-container'>
       <div>
-        <p>This about page is for anyone to read!</p>
+        <p>Welcome to:</p>
+        <h1>Easy Audition</h1>
+        <p>
+          Easy Audition is the app for actors to take control of their careers, analyize their auditions, and book more
+          gigs!
+        </p>
       </div>
     </div>
   );
