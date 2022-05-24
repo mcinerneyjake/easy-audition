@@ -12,7 +12,7 @@ function AboutPage() {
         <p>Welcome to:</p>
         <h1>Easy Audition</h1>
         <p>
-          Easy Audition is the app for actors to take control of their careers, analyize their auditions, and book more
+          Easy Audition is the app for actors to take control of their careers, analyze their auditions, and book more
           gigs!
         </p>
       </div>

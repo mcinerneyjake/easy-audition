@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import AuditionItem from '../AuditionItem/AuditionItem';
+import './AuditionsList.css'
 
 function AuditionsList() {
   const dispatch = useDispatch();
