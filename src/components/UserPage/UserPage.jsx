@@ -10,7 +10,6 @@ function UserPage() {
       <h2>Hi, {user.username}!</h2>
       <p>Here are some of your upcoming auditions:</p>
       <AuditionsList />
-      <LogOutButton className='btn' />
     </div>
   );
 }

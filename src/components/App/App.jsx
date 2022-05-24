@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react';
 import { HashRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import { useDispatch, useSelector } from 'react-redux';
 
-import Nav from '../Nav/Nav';
+import Navigation from '../Nav/Navigation';
 import Footer from '../Footer/Footer';
 
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
@@ -30,7 +31,7 @@ function App() {
   return (
     <Router>
       <div>
-        <Nav />
+        <Navigation />
         <Switch>
           {/* Visiting localhost:3000 will redirect to localhost:3000/home */}
           <Redirect exact from='/' to='/home' />
