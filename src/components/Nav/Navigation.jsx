@@ -32,6 +32,9 @@ function Navigation() {
                   <Nav.Link as={Link} to='/info'>
                     Info Page
                   </Nav.Link>
+                  <Nav.Link as={Link} to='/form'>
+                    Add Audition
+                  </Nav.Link>
 
                   <Nav.Link onClick={() => dispatch({ type: 'LOGOUT' })}>Log Out</Nav.Link>
                 </>
