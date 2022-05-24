@@ -32,6 +32,9 @@ function Navigation() {
                   <Nav.Link as={Link} to='/details'>
                     Audition Details
                   </Nav.Link>
+                  <Nav.Link as={Link} to='/form'>
+                    Add Audition
+                  </Nav.Link>
 
                   <Nav.Link onClick={() => dispatch({ type: 'LOGOUT' })}>Log Out</Nav.Link>
                 </>

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import { Button } from 'react-bootstrap';
 import './LandingPage.css';
 
 // CUSTOM COMPONENTS
@@ -23,13 +24,13 @@ function LandingPage() {
       <AboutPage />
       <center>
         <h4>Already a Member?</h4>
-        <button className='btn btn_sizeSm' onClick={onLogin}>
+        <Button className='btn btn_sizeSm' onClick={onLogin}>
           Login
-        </button>
+        </Button>
         <h4>Need to Register?</h4>
-        <button className='btn btn_sizeSm' onClick={onRegister}>
+        <Button className='btn btn_sizeSm' onClick={onRegister}>
           Register
-        </button>
+        </Button>
       </center>
     </div>
   );

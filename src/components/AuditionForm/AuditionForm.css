@@ -1,0 +1,14 @@
+#callback-switch {
+  float: none;
+}
+
+#booked-switch {
+  float: none;
+}
+
+.form-card-container {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

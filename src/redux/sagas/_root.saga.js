@@ -3,6 +3,7 @@ import loginSaga from './login.saga';
 import registrationSaga from './registration.saga';
 import userSaga from './user.saga';
 import fetchAuditionsSaga from './fetch_auditions_saga';
+import addAuditionSaga from './add_audition.saga';
 import fetchAuditionDetailsSaga from './fetch_audition_details';
 
 // rootSaga is the primary saga.
@@ -18,6 +19,7 @@ export default function* rootSaga() {
     registrationSaga(),
     userSaga(),
     fetchAuditionsSaga(),
+    addAuditionSaga(),
     fetchAuditionDetailsSaga(),
   ]);
 }
