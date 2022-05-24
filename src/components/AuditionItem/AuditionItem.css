@@ -5,3 +5,17 @@
   justify-content: center;
   margin-bottom: 20px;
 }
+
+/* .card:nth-child(odd) {
+  border: 10px solid RGB(255, 158, 110);
+
+  RGB(255, 158, 110)
+  RGB(212, 187, 227)
+  RGB(155, 208, 176)
+  RGB(190, 229, 239)
+  RGB(248, 224, 138)
+}
+
+.card:nth-child(even) {
+  border: 10px solid RGB(212, 187, 227);
+} */
