@@ -17,6 +17,7 @@ import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 import AuditionForm from '../AuditionForm/AuditionForm';
+import AuditionDetails from '../AuditionDetails/AuditionDetails';
 
 import './App.css';
 
@@ -59,11 +60,12 @@ function App() {
           </ProtectedRoute>
 
           <ProtectedRoute
-            // logged in shows InfoPage else shows LoginPage
+            // logged in shows AuditionDetails else shows LoginPage
+            // CHANGE THIS ROUTE TO UPCOMING AUDITIONS AND PAST AUDITIONS
             exact
-            path='/info'
+            path='/details'
           >
-            <InfoPage />
+            <AuditionDetails />
           </ProtectedRoute>
 
           <ProtectedRoute

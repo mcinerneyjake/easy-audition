@@ -4,6 +4,7 @@ import registrationSaga from './registration.saga';
 import userSaga from './user.saga';
 import fetchAuditionsSaga from './fetch_auditions_saga';
 import addAuditionSaga from './add_audition.saga';
+import fetchAuditionDetailsSaga from './fetch_audition_details';
 
 // rootSaga is the primary saga.
 // It bundles up all of the other sagas so our project can use them.
@@ -19,5 +20,6 @@ export default function* rootSaga() {
     userSaga(),
     fetchAuditionsSaga(),
     addAuditionSaga(),
+    fetchAuditionDetailsSaga(),
   ]);
 }
