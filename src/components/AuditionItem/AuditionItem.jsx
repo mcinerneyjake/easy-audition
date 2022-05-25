@@ -20,6 +20,13 @@ function AuditionItem({ audition }) {
     });
   };
 
+  const deleteAudition = () => {
+    dispatch({
+      type: 'DELETE_AUDITION',
+      payload: audition.id,
+    });
+  };
+
   const goToAuditionDetails = () => {
     history.push('/details');
   };
@@ -34,6 +41,9 @@ function AuditionItem({ audition }) {
           <Card.Text>{audition.date}</Card.Text>
         </Card.Body>
         <Button onClick={getSingleAudition}>See Details</Button>
+        <Button className='mt-3' onClick={deleteAudition}>
+          Delete
+        </Button>
       </Card>
     </div>
   );

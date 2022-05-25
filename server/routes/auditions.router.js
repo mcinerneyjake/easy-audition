@@ -40,6 +40,7 @@ router.get('/:id', rejectUnauthenticated, (req, res) => {
     });
 });
 
+// POST a new audition
 router.post('/', (req, res) => {
   const newAuditionSqlQuery = `
 INSERT INTO "auditions" (theatre, location, show, date, director, music_director, choreographer, casting_director, pianist, monitor, materials_used, callback, booked, notes, user_id)
@@ -70,6 +71,23 @@ VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15)
     .catch((error) => {
       console.log('Error in /api/auditions POST request:', error);
       res.sendStatus(500);
+    });
+});
+
+// DELETE an audition by id
+router.delete('/:id', rejectUnauthenticated, (req, res) => {
+  const sqlQuery = `
+      DELETE FROM auditions
+      WHERE user_id = $1 AND id = $2
+      `;
+  const sqlValues = [req.user.id, req.params.id];
+  pool
+    .query(sqlQuery, sqlValues)
+    .then((result) => {
+      res.sendStatus(200);
+    })
+    .catch((error) => {
+      console.log('Error in /api/auditions/:id DELETE request:', error);
     });
 });
 
