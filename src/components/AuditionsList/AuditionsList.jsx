@@ -19,7 +19,9 @@ function AuditionsList() {
       <div>
         <ul>
           {auditions.map((audition) => {
-            return <AuditionItem key={audition.id} audition={audition} />;
+            if (audition.audition_complete === false) {
+              return <AuditionItem key={audition.id} audition={audition} />;
+            }
           })}
         </ul>
       </div>

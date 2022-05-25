@@ -18,6 +18,7 @@ import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 import AuditionForm from '../AuditionForm/AuditionForm';
 import AuditionDetails from '../AuditionDetails/AuditionDetails';
+import UpcomingAuditions from '../UpcomingAuditions/UpcomingAuditions';
 
 import './App.css';
 
@@ -61,19 +62,18 @@ function App() {
 
           <ProtectedRoute
             // logged in shows AuditionDetails else shows LoginPage
-            // CHANGE THIS ROUTE TO UPCOMING AUDITIONS AND PAST AUDITIONS
             exact
             path='/details'
           >
             <AuditionDetails />
           </ProtectedRoute>
 
-          <ProtectedRoute
-            // logged in shows InfoPage else shows LoginPage
-            exact
-            path='/form'
-          >
+          <ProtectedRoute exact path='/form'>
             <AuditionForm />
+          </ProtectedRoute>
+
+          <ProtectedRoute exact path='/upcoming-auditions'>
+            <UpcomingAuditions />
           </ProtectedRoute>
 
           <Route exact path='/login'>

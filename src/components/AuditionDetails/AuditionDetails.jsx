@@ -7,7 +7,7 @@ function AuditionDetails() {
   const audition = useSelector((store) => store.auditionDetailsReducer);
 
   const goToAuditionsList = () => {
-    history.push('/user');
+    history.push('/');
   };
 
   return (
@@ -22,7 +22,7 @@ function AuditionDetails() {
                 <Card.Text>{detail.location}</Card.Text>
                 <Card.Text>{detail.date}</Card.Text>
               </Card.Body>
-              <Button onClick={goToAuditionsList}>Back to Auditions List</Button>
+              <Button onClick={goToAuditionsList}>Go Back</Button>
             </Card>
           </div>
         );

@@ -22,6 +22,25 @@ router.get('/', rejectUnauthenticated, (req, res) => {
     });
 });
 
+// GET single audition by date
+router.get('/single-audition', rejectUnauthenticated, (req, res) => {
+    const sqlQuery = `
+    SELECT * FROM auditions
+    WHERE user_id = $1
+    ORDER BY "date"
+    LIMIT 1
+    `;
+    const sqlValues = [req.user.id];
+    pool
+      .query(sqlQuery, sqlValues)
+      .then((result) => {
+        res.send(result.rows);
+      })
+      .catch((error) => {
+        console.log('Error in /api/auditions/single-audition GET request:', error);
+      });
+  });
+
 // GET single audition by id
 router.get('/:id', rejectUnauthenticated, (req, res) => {
   const sqlQuery = `
