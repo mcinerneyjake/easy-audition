@@ -1,15 +1,29 @@
 import React, { useEffect } from 'react';
 import LogOutButton from '../LogOutButton/LogOutButton';
 import AuditionsList from '../AuditionsList/AuditionsList';
+import AuditionItem from '../AuditionItem/AuditionItem';
 import { useSelector, useDispatch } from 'react-redux';
 
 function UserPage() {
+  const dispatch = useDispatch();
   const user = useSelector((store) => store.user);
+  const auditions = useSelector((store) => store.singleAuditionReducer);
+
+  useEffect(() => {
+    dispatch({
+      type: 'FETCH_CLOSEST_UPCOMING_AUDITION',
+    });
+  }, []);
+
   return (
     <div className='container'>
       <h2>Hi, {user.username}!</h2>
-      <p>Here are some of your upcoming auditions:</p>
-      <AuditionsList />
+      <p>Here is your next upcoming audition:</p>
+      {auditions.map((audition) => {
+        if (audition) {
+          return <AuditionItem key={audition.id} audition={audition} />;
+        }
+      })}
     </div>
   );
 }
