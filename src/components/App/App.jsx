@@ -19,6 +19,7 @@ import RegisterPage from '../RegisterPage/RegisterPage';
 import AuditionForm from '../AuditionForm/AuditionForm';
 import AuditionDetails from '../AuditionDetails/AuditionDetails';
 import UpcomingAuditions from '../UpcomingAuditions/UpcomingAuditions';
+import PastAuditions from '../PastAuditions/PastAuditions';
 
 import './App.css';
 
@@ -74,6 +75,10 @@ function App() {
 
           <ProtectedRoute exact path='/upcoming-auditions'>
             <UpcomingAuditions />
+          </ProtectedRoute>
+
+          <ProtectedRoute exact path='/past-auditions'>
+            <PastAuditions />
           </ProtectedRoute>
 
           <Route exact path='/login'>
