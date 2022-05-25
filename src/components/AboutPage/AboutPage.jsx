@@ -1,4 +1,5 @@
 import React from 'react';
+import { Card, Button } from 'react-bootstrap';
 import './AboutPage.css';
 // This is one of our simplest components
 // It doesn't have local state,
@@ -8,14 +9,18 @@ import './AboutPage.css';
 function AboutPage() {
   return (
     <div className='about-container'>
-      <div>
-        <p>Welcome to:</p>
-        <h1>Easy Audition</h1>
-        <p>
+      <Card>
+        <Card.Text style={{ fontSize: '2rem' }} className='bg-primary'>
+          Welcome to:
+        </Card.Text>
+        <Card.Title style={{ fontSize: '5rem' }}>Easy Audition</Card.Title>
+      </Card>
+      <Card className='mt-5'>
+        <Card.Text style={{ fontSize: '2rem' }}>
           Easy Audition is the app for actors to take control of their careers, analyze their auditions, and book more
           gigs!
-        </p>
-      </div>
+        </Card.Text>
+      </Card>
     </div>
   );
 }
