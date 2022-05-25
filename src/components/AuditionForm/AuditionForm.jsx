@@ -21,6 +21,16 @@ function AuditionForm() {
   const [booked, setBooked] = useState(false);
   const [notes, setNotes] = useState([]);
 
+  const onCallbackSwitchAction = () => {
+    console.log('callback:', callback);
+    setCallback(!callback);
+  };
+
+  const onBookedSwitchAction = () => {
+    console.log('booked:', booked);
+    setBooked(!booked);
+  };
+
   const addNewAudition = () => {
     dispatch({
       type: 'ADD_AUDITION',
@@ -180,8 +190,8 @@ function AuditionForm() {
                   type='switch'
                   label='No/Yes'
                   id='callback-switch'
-                  value={callback}
-                  onChange={(event) => setCallback(event.target.value)}
+                  checked={callback}
+                  onChange={onCallbackSwitchAction}
                 />
               </Form.Group>
 
@@ -191,8 +201,8 @@ function AuditionForm() {
                   type='switch'
                   label='No/Yes'
                   id='booked-switch'
-                  value={booked}
-                  onChange={(event) => setBooked(event.target.value)}
+                  checked={booked}
+                  onChange={onBookedSwitchAction}
                 />
               </Form.Group>
 
