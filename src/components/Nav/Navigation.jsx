@@ -29,11 +29,14 @@ function Navigation() {
                   <Nav.Link as={Link} to='/user'>
                     Home
                   </Nav.Link>
-                  <Nav.Link as={Link} to='/details'>
-                    Audition Details
+                  <Nav.Link as={Link} to='/upcoming-auditions'>
+                    Upcoming Auditions
                   </Nav.Link>
                   <Nav.Link as={Link} to='/form'>
                     Add Audition
+                  </Nav.Link>
+                  <Nav.Link as={Link} to='/past-auditions'>
+                    Past Auditions
                   </Nav.Link>
 
                   <Nav.Link onClick={() => dispatch({ type: 'LOGOUT' })}>Log Out</Nav.Link>
