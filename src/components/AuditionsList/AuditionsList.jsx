@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import AuditionItem from '../AuditionItem/AuditionItem';
-import AuditionForm from '../AuditionForm/AuditionForm';
 import './AuditionsList.css';
 
 function AuditionsList() {
