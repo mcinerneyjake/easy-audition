@@ -3,6 +3,7 @@ import errors from './errors.reducer';
 import user from './user.reducer';
 import auditionsReducer from './auditions.reducer';
 import auditionDetailsReducer from './auditionDetails.reducer';
+import singleAuditionReducer from './singleAudition.reducer';
 
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
@@ -14,7 +15,8 @@ const rootReducer = combineReducers({
   errors, // contains registrationMessage and loginMessage
   user, // will have an id and username if someone is logged in
   auditionsReducer,
-  auditionDetailsReducer
+  auditionDetailsReducer,
+  singleAuditionReducer,
 });
 
 export default rootReducer;
