@@ -62,10 +62,10 @@ function AuditionForm() {
       <Container className='form-card-container'>
         <Card style={{ width: '60rem' }} className='form-card p-3 mb-2 bg-secondary text-white'>
           <Card.Body>
-            <Card.Title style={{ color: '#222' }}>Enter a New Audition</Card.Title>
+            <Card.Title style={{ color: '#222', fontSize: '2rem' }}>Enter a New Audition</Card.Title>
             <Form>
-              <Form.Group className='mb-3'>
-                <Form.Label>Theatre</Form.Label>
+              <Form.Group className='mb-3 mt-4'>
+                <Form.Label style={{ fontSize: '1.25rem' }}>Theatre</Form.Label>
                 <Form.Control
                   type='text'
                   value={theatre}
@@ -75,7 +75,7 @@ function AuditionForm() {
               </Form.Group>
 
               <Form.Group className='mb-3'>
-                <Form.Label>Location</Form.Label>
+                <Form.Label style={{ fontSize: '1.25rem' }}>Location</Form.Label>
                 <Form.Control
                   type='text'
                   value={location}
@@ -85,7 +85,7 @@ function AuditionForm() {
               </Form.Group>
 
               <Form.Group className='mb-3'>
-                <Form.Label>Show</Form.Label>
+                <Form.Label style={{ fontSize: '1.25rem' }}>Show</Form.Label>
                 <Form.Control
                   type='text'
                   value={show}
@@ -95,7 +95,7 @@ function AuditionForm() {
               </Form.Group>
 
               <Form.Group className='mb-3'>
-                <Form.Label>Date</Form.Label>
+                <Form.Label style={{ fontSize: '1.25rem' }}>Date</Form.Label>
                 <Form.Control
                   type='text'
                   value={date}
@@ -105,7 +105,7 @@ function AuditionForm() {
               </Form.Group>
 
               <Form.Group className='mb-3'>
-                <Form.Label>Director</Form.Label>
+                <Form.Label style={{ fontSize: '1.25rem' }}>Director</Form.Label>
                 <Form.Control
                   type='text'
                   value={director}
@@ -115,7 +115,7 @@ function AuditionForm() {
               </Form.Group>
 
               <Form.Group className='mb-3'>
-                <Form.Label>Music Director</Form.Label>
+                <Form.Label style={{ fontSize: '1.25rem' }}>Music Director</Form.Label>
                 <Form.Control
                   type='text'
                   value={musicDirector}
@@ -125,7 +125,7 @@ function AuditionForm() {
               </Form.Group>
 
               <Form.Group className='mb-3'>
-                <Form.Label>Choreographer</Form.Label>
+                <Form.Label style={{ fontSize: '1.25rem' }}>Choreographer</Form.Label>
                 <Form.Control
                   type='text'
                   value={choreographer}
@@ -135,7 +135,7 @@ function AuditionForm() {
               </Form.Group>
 
               <Form.Group className='mb-3'>
-                <Form.Label>Casting Director</Form.Label>
+                <Form.Label style={{ fontSize: '1.25rem' }}>Casting Director</Form.Label>
                 <Form.Control
                   type='text'
                   value={castingDirector}
@@ -145,7 +145,7 @@ function AuditionForm() {
               </Form.Group>
 
               <Form.Group className='mb-3'>
-                <Form.Label>Pianist</Form.Label>
+                <Form.Label style={{ fontSize: '1.25rem' }}>Pianist</Form.Label>
                 <Form.Control
                   type='text'
                   value={pianist}
@@ -155,7 +155,7 @@ function AuditionForm() {
               </Form.Group>
 
               <Form.Group className='mb-3'>
-                <Form.Label>Monitor</Form.Label>
+                <Form.Label style={{ fontSize: '1.25rem' }}>Monitor</Form.Label>
                 <Form.Control
                   type='text'
                   value={monitor}
@@ -165,7 +165,7 @@ function AuditionForm() {
               </Form.Group>
 
               <Form.Group className='mb-3'>
-                <Form.Label>Materials Used</Form.Label>
+                <Form.Label style={{ fontSize: '1.25rem' }}>Materials Used</Form.Label>
                 <Form.Control
                   type='text'
                   value={materialsUsed}
@@ -175,7 +175,7 @@ function AuditionForm() {
               </Form.Group>
 
               <Form.Group className='mb-3'>
-                <Form.Label>Callback Received?</Form.Label>
+                <Form.Label style={{ fontSize: '1.25rem' }}>Callback Received?</Form.Label>
                 <Form.Check
                   type='switch'
                   label='No/Yes'
@@ -186,7 +186,7 @@ function AuditionForm() {
               </Form.Group>
 
               <Form.Group className='mb-3'>
-                <Form.Label>Job Booked?</Form.Label>
+                <Form.Label style={{ fontSize: '1.25rem' }}>Job Booked?</Form.Label>
                 <Form.Check
                   type='switch'
                   label='No/Yes'
@@ -197,7 +197,7 @@ function AuditionForm() {
               </Form.Group>
 
               <Form.Group className='mb-3'>
-                <Form.Label>Notes</Form.Label>
+                <Form.Label style={{ fontSize: '1.25rem' }}>Notes</Form.Label>
                 <Form.Control
                   as='textarea'
                   rows={4}
