@@ -9,6 +9,7 @@ import deleteAuditionSaga from './delete_audition.saga';
 import fetchSingleAuditionSaga from './fetch_single_audition.saga';
 import fetchAuditionToUpdateSaga from './fetch_audition_to_update.saga';
 import updateAuditionSaga from './update_audition.saga';
+import fetchAnalyticsSaga from './fetch_analytics.saga';
 
 // rootSaga is the primary saga.
 // It bundles up all of the other sagas so our project can use them.
@@ -29,5 +30,6 @@ export default function* rootSaga() {
     fetchSingleAuditionSaga(),
     fetchAuditionToUpdateSaga(),
     updateAuditionSaga(),
+    fetchAnalyticsSaga(),
   ]);
 }
