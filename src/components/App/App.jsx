@@ -20,6 +20,7 @@ import AuditionForm from '../AuditionForm/AuditionForm';
 import AuditionDetails from '../AuditionDetails/AuditionDetails';
 import UpcomingAuditions from '../UpcomingAuditions/UpcomingAuditions';
 import PastAuditions from '../PastAuditions/PastAuditions';
+import EditAudition from '../EditAudition/EditAudition';
 
 import './App.css';
 
@@ -79,6 +80,10 @@ function App() {
 
           <ProtectedRoute exact path='/past-auditions'>
             <PastAuditions />
+          </ProtectedRoute>
+
+          <ProtectedRoute exact path='/edit/:id'>
+            <EditAudition />
           </ProtectedRoute>
 
           <Route exact path='/login'>
