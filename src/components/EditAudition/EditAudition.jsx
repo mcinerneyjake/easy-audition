@@ -1,10 +1,30 @@
-import { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useParams, useHistory } from 'react-router-dom';
 import { Button, Form, Card, Container } from 'react-bootstrap';
-import './AuditionForm.css';
+import '../AuditionForm/AuditionForm.css';
 
-function AuditionForm() {
+function EditAudition() {
   const dispatch = useDispatch();
+  const history = useHistory();
+  const params = useParams();
+  const auditionId = params.id;
+  const editAudition = useSelector((store) => store.editAuditionReducer);
+
+  useEffect(() => {
+    dispatch({
+      type: 'FETCH_AUDITION_TO_UPDATE',
+      payload: auditionId,
+    });
+  }, []);
+
+  const handleAuditionEdit = () => {
+    dispatch({
+      type: 'UPDATE_AUDITION',
+      payload: editAudition,
+    });
+    history.push('/details');
+  };
 
   const [theatre, setTheatre] = useState([]);
   const [location, setLocation] = useState([]);
@@ -24,52 +44,26 @@ function AuditionForm() {
 
   const onAuditionCompleteSwitchAction = () => {
     setAuditionComplete(!auditionComplete);
+    dispatch({
+      type: 'EDIT_AUDITION_COMPLETE',
+      payload: auditionComplete,
+    });
   };
 
   const onCallbackSwitchAction = () => {
     setCallback(!callback);
+    dispatch({
+      type: 'EDIT_CALLBACK',
+      payload: callback,
+    });
   };
 
   const onBookedSwitchAction = () => {
     setBooked(!booked);
-  };
-
-  const addNewAudition = () => {
     dispatch({
-      type: 'ADD_AUDITION',
-      payload: {
-        theatre,
-        location,
-        show,
-        date,
-        director,
-        musicDirector,
-        choreographer,
-        castingDirector,
-        pianist,
-        monitor,
-        materialsUsed,
-        auditionComplete,
-        callback,
-        booked,
-        notes,
-      },
+      type: 'EDIT_BOOKED',
+      payload: booked,
     });
-    setTheatre([]);
-    setLocation([]);
-    setShow([]);
-    setDate([]);
-    setDirector([]);
-    setMusicDirector([]);
-    setChoreographer([]);
-    setCastingDirector([]);
-    setPianist([]);
-    setMonitor([]);
-    setMaterialsUsed([]);
-    setAuditionComplete(false);
-    setCallback(false);
-    setBooked(false);
-    setNotes([]);
   };
 
   return (
@@ -77,15 +71,20 @@ function AuditionForm() {
       <Container className='form-card-container'>
         <Card style={{ width: '60rem' }} className='form-card p-3 mb-2 bg-secondary text-white'>
           <Card.Body>
-            <Card.Title style={{ color: '#222', fontSize: '2rem' }}>Enter a New Audition</Card.Title>
+            <Card.Title style={{ color: '#222', fontSize: '2rem' }}>Update the Audition</Card.Title>
             <Form>
               <Form.Group className='mb-3 mt-4'>
                 <Form.Label style={{ fontSize: '1.25rem' }}>Theatre</Form.Label>
                 <Form.Control
                   type='text'
-                  value={theatre}
+                  value={editAudition.theatre}
                   placeholder='Enter Theatre Name'
-                  onChange={(event) => setTheatre(event.target.value)}
+                  onChange={(e) => {
+                    dispatch({
+                      type: 'EDIT_THEATRE',
+                      payload: e.target.value,
+                    });
+                  }}
                 />
               </Form.Group>
 
@@ -93,9 +92,14 @@ function AuditionForm() {
                 <Form.Label style={{ fontSize: '1.25rem' }}>Location</Form.Label>
                 <Form.Control
                   type='text'
-                  value={location}
+                  value={editAudition.location}
                   placeholder='Enter Location'
-                  onChange={(event) => setLocation(event.target.value)}
+                  onChange={(e) => {
+                    dispatch({
+                      type: 'EDIT_LOCATION',
+                      payload: e.target.value,
+                    });
+                  }}
                 />
               </Form.Group>
 
@@ -103,9 +107,14 @@ function AuditionForm() {
                 <Form.Label style={{ fontSize: '1.25rem' }}>Show</Form.Label>
                 <Form.Control
                   type='text'
-                  value={show}
+                  value={editAudition.show}
                   placeholder='Enter Show'
-                  onChange={(event) => setShow(event.target.value)}
+                  onChange={(e) => {
+                    dispatch({
+                      type: 'EDIT_SHOW',
+                      payload: e.target.value,
+                    });
+                  }}
                 />
               </Form.Group>
 
@@ -113,9 +122,14 @@ function AuditionForm() {
                 <Form.Label style={{ fontSize: '1.25rem' }}>Date</Form.Label>
                 <Form.Control
                   type='text'
-                  value={date}
+                  value={editAudition.date}
                   placeholder='Enter Date of Audition'
-                  onChange={(event) => setDate(event.target.value)}
+                  onChange={(e) => {
+                    dispatch({
+                      type: 'EDIT_DATE',
+                      payload: e.target.value,
+                    });
+                  }}
                 />
               </Form.Group>
 
@@ -123,9 +137,14 @@ function AuditionForm() {
                 <Form.Label style={{ fontSize: '1.25rem' }}>Director</Form.Label>
                 <Form.Control
                   type='text'
-                  value={director}
+                  value={editAudition.director}
                   placeholder='Enter Director'
-                  onChange={(event) => setDirector(event.target.value)}
+                  onChange={(e) => {
+                    dispatch({
+                      type: 'EDIT_DIRECTOR',
+                      payload: e.target.value,
+                    });
+                  }}
                 />
               </Form.Group>
 
@@ -133,9 +152,14 @@ function AuditionForm() {
                 <Form.Label style={{ fontSize: '1.25rem' }}>Music Director</Form.Label>
                 <Form.Control
                   type='text'
-                  value={musicDirector}
+                  value={editAudition.music_director}
                   placeholder='Enter Music Director'
-                  onChange={(event) => setMusicDirector(event.target.value)}
+                  onChange={(e) => {
+                    dispatch({
+                      type: 'EDIT_MUSIC_DIRECTOR',
+                      payload: e.target.value,
+                    });
+                  }}
                 />
               </Form.Group>
 
@@ -143,9 +167,14 @@ function AuditionForm() {
                 <Form.Label style={{ fontSize: '1.25rem' }}>Choreographer</Form.Label>
                 <Form.Control
                   type='text'
-                  value={choreographer}
+                  value={editAudition.choreographer}
                   placeholder='Enter Choreographer'
-                  onChange={(event) => setChoreographer(event.target.value)}
+                  onChange={(e) => {
+                    dispatch({
+                      type: 'EDIT_CHOREOGRAPHER',
+                      payload: e.target.value,
+                    });
+                  }}
                 />
               </Form.Group>
 
@@ -153,9 +182,14 @@ function AuditionForm() {
                 <Form.Label style={{ fontSize: '1.25rem' }}>Casting Director</Form.Label>
                 <Form.Control
                   type='text'
-                  value={castingDirector}
+                  value={editAudition.casting_director}
                   placeholder='Enter Casting Director'
-                  onChange={(event) => setCastingDirector(event.target.value)}
+                  onChange={(e) => {
+                    dispatch({
+                      type: 'EDIT_CASTING_DIRECTOR',
+                      payload: e.target.value,
+                    });
+                  }}
                 />
               </Form.Group>
 
@@ -163,9 +197,14 @@ function AuditionForm() {
                 <Form.Label style={{ fontSize: '1.25rem' }}>Pianist</Form.Label>
                 <Form.Control
                   type='text'
-                  value={pianist}
+                  value={editAudition.pianist}
                   placeholder='Enter Pianist'
-                  onChange={(event) => setPianist(event.target.value)}
+                  onChange={(e) => {
+                    dispatch({
+                      type: 'EDIT_PIANIST',
+                      payload: e.target.value,
+                    });
+                  }}
                 />
               </Form.Group>
 
@@ -173,9 +212,14 @@ function AuditionForm() {
                 <Form.Label style={{ fontSize: '1.25rem' }}>Monitor</Form.Label>
                 <Form.Control
                   type='text'
-                  value={monitor}
+                  value={editAudition.monitor}
                   placeholder='Enter Audition Monitor'
-                  onChange={(event) => setMonitor(event.target.value)}
+                  onChange={(e) => {
+                    dispatch({
+                      type: 'EDIT_MONITOR',
+                      payload: e.target.value,
+                    });
+                  }}
                 />
               </Form.Group>
 
@@ -183,9 +227,14 @@ function AuditionForm() {
                 <Form.Label style={{ fontSize: '1.25rem' }}>Materials Used</Form.Label>
                 <Form.Control
                   type='text'
-                  value={materialsUsed}
+                  value={editAudition.materials_used}
                   placeholder='Enter Materials Used (Song or Monologue Name)'
-                  onChange={(event) => setMaterialsUsed(event.target.value)}
+                  onChange={(e) => {
+                    dispatch({
+                      type: 'EDIT_MATERIALS_USED',
+                      payload: e.target.value,
+                    });
+                  }}
                 />
               </Form.Group>
 
@@ -195,7 +244,7 @@ function AuditionForm() {
                   type='switch'
                   label='No/Yes'
                   id='audition-complete-switch'
-                  checked={auditionComplete}
+                  checked={editAudition.audition_complete}
                   onChange={onAuditionCompleteSwitchAction}
                 />
               </Form.Group>
@@ -206,7 +255,7 @@ function AuditionForm() {
                   type='switch'
                   label='No/Yes'
                   id='callback-switch'
-                  checked={callback}
+                  checked={editAudition.callback}
                   onChange={onCallbackSwitchAction}
                 />
               </Form.Group>
@@ -217,7 +266,7 @@ function AuditionForm() {
                   type='switch'
                   label='No/Yes'
                   id='booked-switch'
-                  checked={booked}
+                  checked={editAudition.booked}
                   onChange={onBookedSwitchAction}
                 />
               </Form.Group>
@@ -227,14 +276,22 @@ function AuditionForm() {
                 <Form.Control
                   as='textarea'
                   rows={4}
-                  value={notes}
+                  value={editAudition.notes}
                   placeholder='Notes'
-                  onChange={(event) => setNotes(event.target.value)}
+                  onChange={(e) => {
+                    dispatch({
+                      type: 'EDIT_NOTES',
+                      payload: e.target.value,
+                    });
+                  }}
                 />
               </Form.Group>
             </Form>
-            <Button variant='primary' type='submit' onClick={addNewAudition}>
-              Submit
+            <Button variant='primary' type='submit' onClick={handleAuditionEdit}>
+              Update Audition
+            </Button>
+            <Button variant='primary' type='submit' onClick={() => history.push('/details')}>
+              Cancel
             </Button>
           </Card.Body>
         </Card>
@@ -243,4 +300,4 @@ function AuditionForm() {
   );
 }
 
-export default AuditionForm;
+export default EditAudition;

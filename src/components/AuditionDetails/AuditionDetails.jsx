@@ -13,8 +13,12 @@ function AuditionDetails() {
   return (
     <>
       {audition.map((detail) => {
+        const goToEditAudition = () => {
+          history.push(`/edit/${detail.id}`);
+        };
+
         return (
-          <div id={detail.id} className='card-container'>
+          <div key={detail.id} className='card-container'>
             <Card style={{ width: '18rem' }} className='p-3 mb-2 bg-secondary text-white'>
               <Card.Body>
                 <Card.Title>{detail.show}</Card.Title>
@@ -22,6 +26,7 @@ function AuditionDetails() {
                 <Card.Text>{detail.location}</Card.Text>
                 <Card.Text>{detail.date}</Card.Text>
               </Card.Body>
+              <Button onClick={goToEditAudition}>Edit</Button>
               <Button onClick={goToAuditionsList}>Go Back</Button>
             </Card>
           </div>
