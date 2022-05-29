@@ -5,6 +5,7 @@ import auditionsReducer from './auditions.reducer';
 import auditionDetailsReducer from './auditionDetails.reducer';
 import singleAuditionReducer from './singleAudition.reducer';
 import editAuditionReducer from './editAudition.reducer';
+import auditionDataReducer from './auditionDataReducer.reducer';
 
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
@@ -19,6 +20,7 @@ const rootReducer = combineReducers({
   auditionDetailsReducer,
   singleAuditionReducer,
   editAuditionReducer,
+  auditionDataReducer,
 });
 
 export default rootReducer;

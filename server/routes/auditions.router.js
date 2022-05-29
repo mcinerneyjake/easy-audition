@@ -25,10 +25,10 @@ router.get('/', rejectUnauthenticated, (req, res) => {
 // GET single audition by date
 router.get('/single-audition', rejectUnauthenticated, (req, res) => {
   const sqlQuery = `
-    SELECT * FROM auditions
-    WHERE user_id = $1
-    ORDER BY "date"
-    LIMIT 1
+    SELECT * FROM auditions 
+    WHERE audition_complete IS NOT TRUE AND user_id = $1 
+    ORDER BY "date" 
+    LIMIT 1;
     `;
   const sqlValues = [req.user.id];
   pool
