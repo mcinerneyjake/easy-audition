@@ -11,16 +11,16 @@ function AuditionForm() {
   const [show, setShow] = useState([]);
   const [date, setDate] = useState([]);
   const [director, setDirector] = useState([]);
-  const [musicDirector, setMusicDirector] = useState([]);
-  const [choreographer, setChoreographer] = useState([]);
-  const [castingDirector, setCastingDirector] = useState([]);
-  const [pianist, setPianist] = useState([]);
-  const [monitor, setMonitor] = useState([]);
+  const [musicDirector, setMusicDirector] = useState('N/A');
+  const [choreographer, setChoreographer] = useState('N/A');
+  const [castingDirector, setCastingDirector] = useState('N/A');
+  const [pianist, setPianist] = useState('N/A');
+  const [monitor, setMonitor] = useState('N/A');
   const [materialsUsed, setMaterialsUsed] = useState([]);
   const [auditionComplete, setAuditionComplete] = useState(false);
   const [callback, setCallback] = useState(false);
   const [booked, setBooked] = useState(false);
-  const [notes, setNotes] = useState([]);
+  const [notes, setNotes] = useState('NOTES');
 
   const onAuditionCompleteSwitchAction = () => {
     setAuditionComplete(!auditionComplete);
