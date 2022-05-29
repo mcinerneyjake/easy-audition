@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useParams, useHistory } from 'react-router-dom';
 import { Button, Form, Card, Container } from 'react-bootstrap';
 import '../AuditionForm/AuditionForm.css';
+import { DateTime } from 'luxon';
 
 function EditAudition() {
   const dispatch = useDispatch();
@@ -10,6 +11,9 @@ function EditAudition() {
   const params = useParams();
   const auditionId = params.id;
   const editAudition = useSelector((store) => store.editAuditionReducer);
+
+  console.log('editAudition.date before DateTime:', editAudition.date);
+  console.log('DateTime example:', DateTime.fromISO(editAudition.date).toFormat('MM/dd/yyyyThh:mm').slice(0, -5));
 
   useEffect(() => {
     dispatch({
@@ -26,21 +30,9 @@ function EditAudition() {
     history.push('/details');
   };
 
-  const [theatre, setTheatre] = useState([]);
-  const [location, setLocation] = useState([]);
-  const [show, setShow] = useState([]);
-  const [date, setDate] = useState([]);
-  const [director, setDirector] = useState([]);
-  const [musicDirector, setMusicDirector] = useState([]);
-  const [choreographer, setChoreographer] = useState([]);
-  const [castingDirector, setCastingDirector] = useState([]);
-  const [pianist, setPianist] = useState([]);
-  const [monitor, setMonitor] = useState([]);
-  const [materialsUsed, setMaterialsUsed] = useState([]);
   const [auditionComplete, setAuditionComplete] = useState(false);
   const [callback, setCallback] = useState(false);
   const [booked, setBooked] = useState(false);
-  const [notes, setNotes] = useState([]);
 
   const onAuditionCompleteSwitchAction = () => {
     setAuditionComplete(!auditionComplete);
@@ -122,7 +114,7 @@ function EditAudition() {
                 <Form.Label style={{ fontSize: '1.25rem' }}>Date</Form.Label>
                 <Form.Control
                   type='datetime-local'
-                  value={editAudition.date}
+                  value={DateTime.fromISO(editAudition.date).toFormat('yyyy-MM-ddThh:mm').slice(0, -5)}
                   placeholder='Enter Date of Audition'
                   onChange={(e) => {
                     dispatch({
@@ -287,10 +279,10 @@ function EditAudition() {
                 />
               </Form.Group>
             </Form>
-            <Button variant='primary' type='submit' onClick={handleAuditionEdit}>
+            <Button className='mx-2' variant='primary' type='submit' onClick={handleAuditionEdit}>
               Update Audition
             </Button>
-            <Button variant='primary' type='submit' onClick={() => history.push('/details')}>
+            <Button className='mx-2' variant='primary' type='submit' onClick={() => history.push('/details')}>
               Cancel
             </Button>
           </Card.Body>
