@@ -16,18 +16,19 @@ function AuditionAnalytics() {
   }, []);
 
   const [userData, setUserData] = useState({
-    labels: auditionData.map && auditionData.map((audition) => audition.auditionCompleteTotal.date),
+    labels: ['May', 'June', 'July'],
+    // auditionData.map((audition) => console.log(audition.auditionCompleteCountTotal)),
     datasets: [
       {
         label: 'Number of Auditions',
-        data:
-          auditionData.map &&
-          auditionData.map((audition) => [
-            console.log('count of completed auditions:', audition.auditionCompleteTotal.count),
-            audition.auditionCompleteTotal.count,
-            audition.callbackTotal.count,
-            audition.bookedTotal.count,
-          ]),
+        data: auditionData.map((audition) => {
+          console.log('audition:', audition);
+          return audition.map((count) => {
+            console.log('count:', count);
+            console.log('count.count:', count.count);
+            return count.count;
+          });
+        }),
         backgroundColor: ['rgba(75,192,192,1)', '#ecf0f1', '#50AF95'],
         borderColor: 'black',
         borderWidth: 2,
@@ -36,7 +37,7 @@ function AuditionAnalytics() {
   });
 
   return (
-    <div style={{ width: 700 }}>
+    <div>
       <LineChart chartData={userData} />
     </div>
   );

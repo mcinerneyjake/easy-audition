@@ -112,7 +112,7 @@ function AuditionForm() {
               <Form.Group className='mb-3'>
                 <Form.Label style={{ fontSize: '1.25rem' }}>Date</Form.Label>
                 <Form.Control
-                  type='text'
+                  type='datetime-local'
                   value={date}
                   placeholder='Enter Date of Audition'
                   onChange={(event) => setDate(event.target.value)}

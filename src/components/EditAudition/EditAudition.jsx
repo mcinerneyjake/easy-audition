@@ -16,7 +16,7 @@ function EditAudition() {
       type: 'FETCH_AUDITION_TO_UPDATE',
       payload: auditionId,
     });
-  }, []);
+  }, [auditionId]);
 
   const handleAuditionEdit = () => {
     dispatch({
@@ -121,7 +121,7 @@ function EditAudition() {
               <Form.Group className='mb-3'>
                 <Form.Label style={{ fontSize: '1.25rem' }}>Date</Form.Label>
                 <Form.Control
-                  type='text'
+                  type='datetime-local'
                   value={editAudition.date}
                   placeholder='Enter Date of Audition'
                   onChange={(e) => {

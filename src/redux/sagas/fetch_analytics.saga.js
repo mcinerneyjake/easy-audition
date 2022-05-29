@@ -4,7 +4,6 @@ import { put, takeLatest } from 'redux-saga/effects';
 function* fetchAnalytics() {
   try {
     const analytics = yield axios.get('/api/chart');
-    console.log('GET analytics', analytics.data);
     yield put({
       type: 'SET_ANALYTICS',
       payload: analytics.data,

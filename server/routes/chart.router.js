@@ -2,39 +2,34 @@ const express = require('express');
 const pool = require('../modules/pool');
 const router = express.Router();
 
-// GET total number of complete auditions, callbacks, and booked jobs
+// GET total count of complete auditions, callbacks, and booked jobs
 router.get('/', async (req, res) => {
   try {
-    const completedAuditionQuery = `
-        SELECT date, count(*) FILTER (WHERE audition_complete)
-        FROM auditions
-        GROUP BY auditions.date;
+    const completedAuditionCountQuery = `
+        SELECT count(*) FILTER (WHERE audition_complete)
+        FROM auditions;
         `;
-    const completedAuditionRes = await pool.query(completedAuditionQuery);
+    const completedAuditionCountRes = await pool.query(completedAuditionCountQuery);
 
-    const callbackAuditionQuery = `
-        SELECT date, count(*) FILTER (WHERE callback)
-        FROM auditions
-        GROUP BY auditions.date;
+    const callbackAuditionCountQuery = `
+        SELECT count(*) FILTER (WHERE callback)
+        FROM auditions;
         `;
-    const callbackAuditionRes = await pool.query(callbackAuditionQuery);
+    const callbackAuditionCountRes = await pool.query(callbackAuditionCountQuery);
 
-    const bookedAuditionQuery = `
-        SELECT date, count(*) FILTER (WHERE booked)
-        FROM auditions
-        GROUP BY auditions.date;
+    const bookedAuditionCountQuery = `
+        SELECT count(*) FILTER (WHERE booked)
+        FROM auditions;
         `;
-    const bookedAuditionRes = await pool.query(bookedAuditionQuery);
+    const bookedAuditionCountRes = await pool.query(bookedAuditionCountQuery);
 
-    res.send({
-      auditionCompleteTotal: completedAuditionRes.rows,
-      callbackTotal: callbackAuditionRes.rows,
-      bookedTotal: bookedAuditionRes.rows,
-    });
+    res.send([completedAuditionCountRes.rows, callbackAuditionCountRes.rows, bookedAuditionCountRes.rows]);
   } catch (error) {
     console.log('Error in GET /chart', error);
     res.sendStatus(500);
   }
 });
+
+// GET date
 
 module.exports = router;
