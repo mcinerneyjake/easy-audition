@@ -1,36 +1,31 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Button } from 'react-bootstrap';
 
-function LoginForm() {
+function RegisterForm() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const errors = useSelector((store) => store.errors);
   const dispatch = useDispatch();
 
-  const login = (event) => {
+  const registerUser = (event) => {
     event.preventDefault();
 
-    if (username && password) {
-      dispatch({
-        type: 'LOGIN',
-        payload: {
-          username: username,
-          password: password,
-        },
-      });
-    } else {
-      dispatch({ type: 'LOGIN_INPUT_ERROR' });
-    }
-  }; // end login
+    dispatch({
+      type: 'REGISTER',
+      payload: {
+        username: username,
+        password: password,
+      },
+    });
+  }; // end registerUser
 
   return (
-    <form className='formPanel' onSubmit={login}>
-      <h2>Login</h2>
-      {errors.loginMessage && (
+    <form className='formPanel' onSubmit={registerUser}>
+      <h2>Register User</h2>
+      {errors.registrationMessage && (
         <h3 className='alert' role='alert'>
-          {errors.loginMessage}
+          {errors.registrationMessage}
         </h3>
       )}
       <div>
@@ -39,8 +34,9 @@ function LoginForm() {
           <input
             type='text'
             name='username'
-            required
+            className='login-input'
             value={username}
+            required
             onChange={(event) => setUsername(event.target.value)}
           />
         </label>
@@ -51,19 +47,20 @@ function LoginForm() {
           <input
             type='password'
             name='password'
-            required
+            className='login-input'
             value={password}
+            required
             onChange={(event) => setPassword(event.target.value)}
           />
         </label>
       </div>
       <div>
-        <Button className='btn' type='submit' name='submit' value='Log In'>
-          Log In
+        <Button className='btn mt-2' type='submit' name='submit' value='Register'>
+          Register
         </Button>
       </div>
     </form>
   );
 }
 
-export default LoginForm;
+export default RegisterForm;

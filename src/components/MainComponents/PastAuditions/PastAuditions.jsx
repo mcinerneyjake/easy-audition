@@ -4,7 +4,14 @@ import AuditionItem from '../AuditionItem/AuditionItem';
 import './PastAuditions.css';
 
 function PastAuditions() {
+  const dispatch = useDispatch();
   const auditions = useSelector((store) => store.auditionsReducer);
+
+  useEffect(() => {
+    dispatch({
+      type: 'FETCH_AUDITIONS',
+    });
+  }, []);
 
   return (
     <>

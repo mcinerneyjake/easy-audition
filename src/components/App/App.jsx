@@ -5,23 +5,22 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import { useDispatch, useSelector } from 'react-redux';
 
-import Navigation from '../Nav/Navigation';
-import Footer from '../Footer/Footer';
+import Navigation from '../Routing/Nav/Navigation';
+import Footer from '../Routing/Footer/Footer';
 
-import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
+import ProtectedRoute from '../Routing/ProtectedRoute/ProtectedRoute';
 
-import AboutPage from '../AboutPage/AboutPage';
-import UserPage from '../UserPage/UserPage';
-import InfoPage from '../InfoPage/InfoPage';
-import LandingPage from '../LandingPage/LandingPage';
-import LoginPage from '../LoginPage/LoginPage';
-import RegisterPage from '../RegisterPage/RegisterPage';
-import AuditionForm from '../AuditionForm/AuditionForm';
-import AuditionDetails from '../AuditionDetails/AuditionDetails';
-import UpcomingAuditions from '../UpcomingAuditions/UpcomingAuditions';
-import PastAuditions from '../PastAuditions/PastAuditions';
-import EditAudition from '../EditAudition/EditAudition';
-import AuditionAnalytics from '../AuditionAnalytics/AuditionAnalytics';
+import AboutPage from '../MainComponents/AboutPage/AboutPage';
+import UserPage from '../MainComponents/UserPage/UserPage';
+import LandingPage from '../Log-Register/LandingPage/LandingPage';
+import LoginPage from '../Log-Register/LoginPage/LoginPage';
+import RegisterPage from '../Log-Register/RegisterPage/RegisterPage';
+import AuditionForm from '../MainComponents/AuditionForm/AuditionForm';
+import AuditionDetails from '../MainComponents/AuditionDetails/AuditionDetails';
+import UpcomingAuditions from '../MainComponents/UpcomingAuditions/UpcomingAuditions';
+import PastAuditions from '../MainComponents/PastAuditions/PastAuditions';
+import EditAudition from '../MainComponents/EditAudition/EditAudition';
+import AuditionAnalytics from '../MainComponents/AuditionAnalytics/AuditionAnalytics';
 
 import './App.css';
 

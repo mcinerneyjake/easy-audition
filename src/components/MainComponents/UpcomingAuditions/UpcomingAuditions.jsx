@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import AuditionItem from '../AuditionItem/AuditionItem';
-import './AuditionsList.css';
+import './UpcomingAuditions.css';
 
-function AuditionsList() {
+function UpcomingAuditions() {
   const dispatch = useDispatch();
   const auditions = useSelector((store) => store.auditionsReducer);
 
@@ -15,17 +15,14 @@ function AuditionsList() {
 
   return (
     <>
-      <div>
-        <ul>
-          {auditions.map((audition) => {
-            if (audition.audition_complete === false) {
-              return <AuditionItem key={audition.id} audition={audition} />;
-            }
-          })}
-        </ul>
-      </div>
+      <h2 className='upcoming-h2'>Upcoming Auditions</h2>
+      {auditions.map((audition) => {
+        if (audition.audition_complete === false) {
+          return <AuditionItem key={audition.id} audition={audition} />;
+        }
+      })}
     </>
   );
 }
 
-export default AuditionsList;
+export default UpcomingAuditions;
