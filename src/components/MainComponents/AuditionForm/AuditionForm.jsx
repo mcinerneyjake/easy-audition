@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { Button, Form, Card, Container } from 'react-bootstrap';
+import { Accordion, Button, Form, Card, Container } from 'react-bootstrap';
 import './AuditionForm.css';
 
 function AuditionForm() {
@@ -83,6 +83,7 @@ function AuditionForm() {
                 <Form.Label style={{ fontSize: '1.25rem' }}>Theatre</Form.Label>
                 <Form.Control
                   type='text'
+                  required
                   value={theatre}
                   placeholder='Enter Theatre Name'
                   onChange={(event) => setTheatre(event.target.value)}
@@ -93,6 +94,7 @@ function AuditionForm() {
                 <Form.Label style={{ fontSize: '1.25rem' }}>Location</Form.Label>
                 <Form.Control
                   type='text'
+                  required
                   value={location}
                   placeholder='Enter Location'
                   onChange={(event) => setLocation(event.target.value)}
@@ -103,6 +105,7 @@ function AuditionForm() {
                 <Form.Label style={{ fontSize: '1.25rem' }}>Show</Form.Label>
                 <Form.Control
                   type='text'
+                  required
                   value={show}
                   placeholder='Enter Show'
                   onChange={(event) => setShow(event.target.value)}
@@ -113,6 +116,7 @@ function AuditionForm() {
                 <Form.Label style={{ fontSize: '1.25rem' }}>Date</Form.Label>
                 <Form.Control
                   type='datetime-local'
+                  required
                   value={date}
                   placeholder='Enter Date of Audition'
                   onChange={(event) => setDate(event.target.value)}
@@ -123,66 +127,78 @@ function AuditionForm() {
                 <Form.Label style={{ fontSize: '1.25rem' }}>Director</Form.Label>
                 <Form.Control
                   type='text'
+                  required
                   value={director}
                   placeholder='Enter Director'
                   onChange={(event) => setDirector(event.target.value)}
                 />
               </Form.Group>
 
-              <Form.Group className='mb-3'>
-                <Form.Label style={{ fontSize: '1.25rem' }}>Music Director</Form.Label>
-                <Form.Control
-                  type='text'
-                  value={musicDirector}
-                  placeholder='Enter Music Director'
-                  onChange={(event) => setMusicDirector(event.target.value)}
-                />
-              </Form.Group>
+              <Container>
+                <Form.Label style={{ fontSize: '1.25rem' }}>Creative Team</Form.Label>
+                <Accordion>
+                  <Accordion.Item>
+                    <Accordion.Header>Click to Expand</Accordion.Header>
+                    <Accordion.Body className='bg-secondary'>
+                      <Form.Group className='mb-3'>
+                        <Form.Label style={{ fontSize: '1.25rem' }}>Music Director</Form.Label>
+                        <Form.Control
+                          type='text'
+                          value={musicDirector}
+                          placeholder='Enter Music Director'
+                          onChange={(event) => setMusicDirector(event.target.value)}
+                        />
+                      </Form.Group>
 
-              <Form.Group className='mb-3'>
-                <Form.Label style={{ fontSize: '1.25rem' }}>Choreographer</Form.Label>
-                <Form.Control
-                  type='text'
-                  value={choreographer}
-                  placeholder='Enter Choreographer'
-                  onChange={(event) => setChoreographer(event.target.value)}
-                />
-              </Form.Group>
+                      <Form.Group className='mb-3'>
+                        <Form.Label style={{ fontSize: '1.25rem' }}>Choreographer</Form.Label>
+                        <Form.Control
+                          type='text'
+                          value={choreographer}
+                          placeholder='Enter Choreographer'
+                          onChange={(event) => setChoreographer(event.target.value)}
+                        />
+                      </Form.Group>
 
-              <Form.Group className='mb-3'>
-                <Form.Label style={{ fontSize: '1.25rem' }}>Casting Director</Form.Label>
-                <Form.Control
-                  type='text'
-                  value={castingDirector}
-                  placeholder='Enter Casting Director'
-                  onChange={(event) => setCastingDirector(event.target.value)}
-                />
-              </Form.Group>
+                      <Form.Group className='mb-3'>
+                        <Form.Label style={{ fontSize: '1.25rem' }}>Casting Director</Form.Label>
+                        <Form.Control
+                          type='text'
+                          value={castingDirector}
+                          placeholder='Enter Casting Director'
+                          onChange={(event) => setCastingDirector(event.target.value)}
+                        />
+                      </Form.Group>
 
-              <Form.Group className='mb-3'>
-                <Form.Label style={{ fontSize: '1.25rem' }}>Pianist</Form.Label>
-                <Form.Control
-                  type='text'
-                  value={pianist}
-                  placeholder='Enter Pianist'
-                  onChange={(event) => setPianist(event.target.value)}
-                />
-              </Form.Group>
+                      <Form.Group className='mb-3'>
+                        <Form.Label style={{ fontSize: '1.25rem' }}>Pianist</Form.Label>
+                        <Form.Control
+                          type='text'
+                          value={pianist}
+                          placeholder='Enter Pianist'
+                          onChange={(event) => setPianist(event.target.value)}
+                        />
+                      </Form.Group>
 
-              <Form.Group className='mb-3'>
-                <Form.Label style={{ fontSize: '1.25rem' }}>Monitor</Form.Label>
-                <Form.Control
-                  type='text'
-                  value={monitor}
-                  placeholder='Enter Audition Monitor'
-                  onChange={(event) => setMonitor(event.target.value)}
-                />
-              </Form.Group>
+                      <Form.Group className='mb-3'>
+                        <Form.Label style={{ fontSize: '1.25rem' }}>Monitor</Form.Label>
+                        <Form.Control
+                          type='text'
+                          value={monitor}
+                          placeholder='Enter Audition Monitor'
+                          onChange={(event) => setMonitor(event.target.value)}
+                        />
+                      </Form.Group>
+                    </Accordion.Body>
+                  </Accordion.Item>
+                </Accordion>
+              </Container>
 
               <Form.Group className='mb-3'>
                 <Form.Label style={{ fontSize: '1.25rem' }}>Materials Used</Form.Label>
                 <Form.Control
                   type='text'
+                  required
                   value={materialsUsed}
                   placeholder='Enter Materials Used (Song or Monologue Name)'
                   onChange={(event) => setMaterialsUsed(event.target.value)}

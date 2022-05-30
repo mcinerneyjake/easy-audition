@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams, useHistory } from 'react-router-dom';
-import { Button, Form, Card, Container } from 'react-bootstrap';
+import { Accordion, Button, Form, Card, Container } from 'react-bootstrap';
 import '../AuditionForm/AuditionForm.css';
 import { DateTime } from 'luxon';
 
@@ -140,80 +140,90 @@ function EditAudition() {
                 />
               </Form.Group>
 
-              <Form.Group className='mb-3'>
-                <Form.Label style={{ fontSize: '1.25rem' }}>Music Director</Form.Label>
-                <Form.Control
-                  type='text'
-                  value={editAudition.music_director}
-                  placeholder='Enter Music Director'
-                  onChange={(e) => {
-                    dispatch({
-                      type: 'EDIT_MUSIC_DIRECTOR',
-                      payload: e.target.value,
-                    });
-                  }}
-                />
-              </Form.Group>
+              <Container>
+                <Form.Label style={{ fontSize: '1.25rem' }}>Creative Team</Form.Label>
+                <Accordion>
+                  <Accordion.Item>
+                    <Accordion.Header>Click to Expand</Accordion.Header>
+                    <Accordion.Body className='bg-secondary'>
+                      <Form.Group className='mb-3'>
+                        <Form.Label style={{ fontSize: '1.25rem' }}>Music Director</Form.Label>
+                        <Form.Control
+                          type='text'
+                          value={editAudition.music_director}
+                          placeholder='Enter Music Director'
+                          onChange={(e) => {
+                            dispatch({
+                              type: 'EDIT_MUSIC_DIRECTOR',
+                              payload: e.target.value,
+                            });
+                          }}
+                        />
+                      </Form.Group>
 
-              <Form.Group className='mb-3'>
-                <Form.Label style={{ fontSize: '1.25rem' }}>Choreographer</Form.Label>
-                <Form.Control
-                  type='text'
-                  value={editAudition.choreographer}
-                  placeholder='Enter Choreographer'
-                  onChange={(e) => {
-                    dispatch({
-                      type: 'EDIT_CHOREOGRAPHER',
-                      payload: e.target.value,
-                    });
-                  }}
-                />
-              </Form.Group>
+                      <Form.Group className='mb-3'>
+                        <Form.Label style={{ fontSize: '1.25rem' }}>Choreographer</Form.Label>
+                        <Form.Control
+                          type='text'
+                          value={editAudition.choreographer}
+                          placeholder='Enter Choreographer'
+                          onChange={(e) => {
+                            dispatch({
+                              type: 'EDIT_CHOREOGRAPHER',
+                              payload: e.target.value,
+                            });
+                          }}
+                        />
+                      </Form.Group>
 
-              <Form.Group className='mb-3'>
-                <Form.Label style={{ fontSize: '1.25rem' }}>Casting Director</Form.Label>
-                <Form.Control
-                  type='text'
-                  value={editAudition.casting_director}
-                  placeholder='Enter Casting Director'
-                  onChange={(e) => {
-                    dispatch({
-                      type: 'EDIT_CASTING_DIRECTOR',
-                      payload: e.target.value,
-                    });
-                  }}
-                />
-              </Form.Group>
+                      <Form.Group className='mb-3'>
+                        <Form.Label style={{ fontSize: '1.25rem' }}>Casting Director</Form.Label>
+                        <Form.Control
+                          type='text'
+                          value={editAudition.casting_director}
+                          placeholder='Enter Casting Director'
+                          onChange={(e) => {
+                            dispatch({
+                              type: 'EDIT_CASTING_DIRECTOR',
+                              payload: e.target.value,
+                            });
+                          }}
+                        />
+                      </Form.Group>
 
-              <Form.Group className='mb-3'>
-                <Form.Label style={{ fontSize: '1.25rem' }}>Pianist</Form.Label>
-                <Form.Control
-                  type='text'
-                  value={editAudition.pianist}
-                  placeholder='Enter Pianist'
-                  onChange={(e) => {
-                    dispatch({
-                      type: 'EDIT_PIANIST',
-                      payload: e.target.value,
-                    });
-                  }}
-                />
-              </Form.Group>
+                      <Form.Group className='mb-3'>
+                        <Form.Label style={{ fontSize: '1.25rem' }}>Pianist</Form.Label>
+                        <Form.Control
+                          type='text'
+                          value={editAudition.pianist}
+                          placeholder='Enter Pianist'
+                          onChange={(e) => {
+                            dispatch({
+                              type: 'EDIT_PIANIST',
+                              payload: e.target.value,
+                            });
+                          }}
+                        />
+                      </Form.Group>
 
-              <Form.Group className='mb-3'>
-                <Form.Label style={{ fontSize: '1.25rem' }}>Monitor</Form.Label>
-                <Form.Control
-                  type='text'
-                  value={editAudition.monitor}
-                  placeholder='Enter Audition Monitor'
-                  onChange={(e) => {
-                    dispatch({
-                      type: 'EDIT_MONITOR',
-                      payload: e.target.value,
-                    });
-                  }}
-                />
-              </Form.Group>
+                      <Form.Group className='mb-3'>
+                        <Form.Label style={{ fontSize: '1.25rem' }}>Monitor</Form.Label>
+                        <Form.Control
+                          type='text'
+                          value={editAudition.monitor}
+                          placeholder='Enter Audition Monitor'
+                          onChange={(e) => {
+                            dispatch({
+                              type: 'EDIT_MONITOR',
+                              payload: e.target.value,
+                            });
+                          }}
+                        />
+                      </Form.Group>
+                    </Accordion.Body>
+                  </Accordion.Item>
+                </Accordion>
+              </Container>
 
               <Form.Group className='mb-3'>
                 <Form.Label style={{ fontSize: '1.25rem' }}>Materials Used</Form.Label>
