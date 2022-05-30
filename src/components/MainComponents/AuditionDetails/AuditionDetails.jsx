@@ -15,6 +15,14 @@ function AuditionDetails() {
           history.push(`/edit/${detail.id}`);
         };
 
+        const goToAuditionsList = () => {
+          if (detail.audition_complete === true) {
+            history.push('/past-auditions');
+          } else if (detail.audition_complete === false) {
+            history.push('/upcoming-auditions');
+          }
+        };
+
         return (
           <div>
             <h2 className='details-h2'>Audition Details</h2>
@@ -38,8 +46,8 @@ function AuditionDetails() {
                   <Card.Text>Notes: {detail.notes}</Card.Text>
                 </Card.Body>
                 <Button onClick={goToEditAudition}>Edit</Button>
-                <Button className='mt-3' onClick={history.goBack}>
-                  Go Back
+                <Button className='mt-3' onClick={goToAuditionsList}>
+                  Go To Auditions
                 </Button>
               </Card>
             </div>
