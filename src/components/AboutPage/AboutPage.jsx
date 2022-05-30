@@ -21,6 +21,32 @@ function AboutPage() {
           gigs!
         </Card.Text>
       </Card>
+      <Card className='mt-5'>
+        <Card.Text style={{ fontSize: '2rem' }}>Technologies Used:</Card.Text>
+        <Card.Text style={{ fontSize: '1.5rem' }}>
+          <ul>
+            <li>React</li>
+            <li>React Redux</li>
+            <li>Redux-Saga</li>
+            <li>Node</li>
+            <li>Express</li>
+            <li>React-Bootstrap</li>
+            <li>Chart.js</li>
+          </ul>
+        </Card.Text>
+      </Card>
+      <Card className='mt-5'>
+        <Card.Text style={{ fontSize: '2rem' }}>Special Thanks to:</Card.Text>
+        <Card.Text style={{ fontSize: '1.5rem' }}>
+          <ul>
+            <li>Prime Digital Academy</li>
+            <li>Matt Black</li>
+            <li>The Dahl Cohort</li>
+            <li>Friends and Family</li>
+            <li>Kaitlin ❤️</li>
+          </ul>
+        </Card.Text>
+      </Card>
     </div>
   );
 }
