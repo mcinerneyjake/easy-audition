@@ -34,7 +34,7 @@ function AuditionItem({ audition }) {
 
   return (
     <div className='card-container'>
-      <Card style={{ width: '18rem' }} className='p-3 mb-2 bg-secondary text-white'>
+      <Card style={{ width: '18rem' }} className='p-3 mb-2 bg-secondary text-white audition-item-card'>
         <Card.Body>
           <Card.Title>{audition.show}</Card.Title>
           <Card.Subtitle>{audition.theatre}</Card.Subtitle>

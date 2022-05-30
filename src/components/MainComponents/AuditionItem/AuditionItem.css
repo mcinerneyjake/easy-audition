@@ -6,6 +6,10 @@
   margin-bottom: 20px;
 }
 
+.audition-item-card {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
 /* .card:nth-child(odd) {
   border: 10px solid RGB(255, 158, 110);
 

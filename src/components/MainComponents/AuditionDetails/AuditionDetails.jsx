@@ -8,10 +8,6 @@ function AuditionDetails() {
   const history = useHistory();
   const audition = useSelector((store) => store.auditionDetailsReducer);
 
-  const goToAuditionsList = () => {
-    history.push('/');
-  };
-
   return (
     <>
       {audition.map((detail) => {
@@ -42,7 +38,7 @@ function AuditionDetails() {
                   <Card.Text>Notes: {detail.notes}</Card.Text>
                 </Card.Body>
                 <Button onClick={goToEditAudition}>Edit</Button>
-                <Button className='mt-3' onClick={goToAuditionsList}>
+                <Button className='mt-3' onClick={history.goBack}>
                   Go Back
                 </Button>
               </Card>
