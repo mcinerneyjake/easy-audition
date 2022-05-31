@@ -1,18 +1,18 @@
 import React from 'react';
-import { Line } from 'react-chartjs-2';
+import { Line, Bar } from 'react-chartjs-2';
 import Chart from 'chart.js/auto';
 import { Card, Container } from 'react-bootstrap';
 
-function LineChart({ chartData }) {
+function BarChart({ chartData }) {
   return (
     <div>
       <Container>
         <Card>
-          <Line data={chartData} />
+          <Bar data={chartData} />
         </Card>
       </Container>
     </div>
   );
 }
 
-export default LineChart;
+export default BarChart;
