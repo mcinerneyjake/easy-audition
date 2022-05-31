@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import LineChart from './LineChart';
-import Chart from 'chart.js/auto';
+import BarChart from './BarChart';
+import { Chart as ChartJS, CategoryScale, LinearScale, LineElement, Title, Tooltip, Legend } from 'chart.js';
+
+ChartJS.register(CategoryScale, LinearScale, LineElement, Title, Tooltip, Legend);
 
 function AuditionAnalytics() {
   const dispatch = useDispatch();
@@ -16,19 +18,21 @@ function AuditionAnalytics() {
   }, []);
 
   const [userData, setUserData] = useState({
-    labels: ['May', 'June', 'July'],
-    // auditionData.map((audition) => console.log(audition.auditionCompleteCountTotal)),
+    labels: ['Completed', 'Callbacks', 'Booked'],
+    // auditionData && auditionData.map((audition) => console.log(audition.auditionCompleteCountTotal)),
     datasets: [
       {
-        label: 'Number of Auditions',
-        data: auditionData.map((audition) => {
-          console.log('audition:', audition);
-          return audition.map((count) => {
-            console.log('count:', count);
-            console.log('count.count:', count.count);
-            return count.count;
-          });
-        }),
+        label: 'Total Number of Auditions',
+        data:
+          auditionData &&
+          auditionData.map((audition) => {
+            console.log('audition:', audition);
+            return audition.map((count) => {
+              console.log('count:', count);
+              console.log('count.count:', count.count);
+              return count.count;
+            });
+          }),
         backgroundColor: ['rgba(75,192,192,1)', '#ecf0f1', '#50AF95'],
         borderColor: 'black',
         borderWidth: 2,
@@ -38,7 +42,7 @@ function AuditionAnalytics() {
 
   return (
     <div>
-      <LineChart chartData={userData} />
+      <BarChart chartData={userData} />
     </div>
   );
 }
