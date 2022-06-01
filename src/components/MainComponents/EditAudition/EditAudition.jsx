@@ -13,7 +13,6 @@ function EditAudition() {
   const editAudition = useSelector((store) => store.editAuditionReducer);
 
   console.log('editAudition.date before DateTime:', editAudition.date);
-  console.log('DateTime example:', DateTime.fromISO(editAudition.date).toFormat('MM/dd/yyyyThh:mm').slice(0, -5));
 
   useEffect(() => {
     dispatch({
@@ -114,7 +113,7 @@ function EditAudition() {
                 <Form.Label style={{ fontSize: '1.25rem' }}>Date</Form.Label>
                 <Form.Control
                   type='datetime-local'
-                  value={DateTime.fromISO(editAudition.date).toFormat('yyyy-MM-ddThh:mm').slice(0, -5)}
+                  value={editAudition.date}
                   placeholder='Enter Date of Audition'
                   onChange={(e) => {
                     dispatch({
@@ -143,8 +142,8 @@ function EditAudition() {
               <Container>
                 <Form.Label style={{ fontSize: '1.25rem' }}>Creative Team</Form.Label>
                 <Accordion>
-                  <Accordion.Item>
-                    <Accordion.Header>Click to Expand</Accordion.Header>
+                  <Accordion.Item eventKey='0'>
+                    <Accordion.Header>Creative Team Info</Accordion.Header>
                     <Accordion.Body className='bg-secondary'>
                       <Form.Group className='mb-3'>
                         <Form.Label style={{ fontSize: '1.25rem' }}>Music Director</Form.Label>
