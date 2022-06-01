@@ -40,9 +40,9 @@ function AuditionDetails() {
                   <Card.Text>Pianist: {detail.pianist}</Card.Text>
                   <Card.Text>Monitor: {detail.monitor}</Card.Text>
                   <Card.Text>Materials Used: {detail.materials_used}</Card.Text>
-                  <Card.Text>Audition Complete? {detail.audition_complete}</Card.Text>
-                  <Card.Text>Callback? {detail.callback}</Card.Text>
-                  <Card.Text>Booked? {detail.booked}</Card.Text>
+                  <Card.Text>Audition Complete? {detail.audition_complete ? 'Yes' : 'No'}</Card.Text>
+                  <Card.Text>Callback? {detail.callback ? 'Yes' : 'No'}</Card.Text>
+                  <Card.Text>Booked? {detail.booked ? 'Yes' : 'No'}</Card.Text>
                   <Card.Text>Notes: {detail.notes}</Card.Text>
                 </Card.Body>
                 <Button onClick={goToEditAudition}>Edit</Button>
