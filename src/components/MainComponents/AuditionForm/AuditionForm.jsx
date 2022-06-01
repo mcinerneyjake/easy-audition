@@ -137,8 +137,8 @@ function AuditionForm() {
               <Container>
                 <Form.Label style={{ fontSize: '1.25rem' }}>Creative Team</Form.Label>
                 <Accordion>
-                  <Accordion.Item>
-                    <Accordion.Header>Click to Expand</Accordion.Header>
+                  <Accordion.Item eventKey='0'>
+                    <Accordion.Header>Creative Team Info</Accordion.Header>
                     <Accordion.Body className='bg-secondary'>
                       <Form.Group className='mb-3'>
                         <Form.Label style={{ fontSize: '1.25rem' }}>Music Director</Form.Label>

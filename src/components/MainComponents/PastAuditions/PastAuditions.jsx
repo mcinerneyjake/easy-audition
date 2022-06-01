@@ -14,6 +14,11 @@ function PastAuditions() {
     });
   }, []);
 
+  // Sorts auditions by most recent date first.
+  const sortedAuditions = auditions.sort((a, b) => {
+    return new Date(b.date) - new Date(a.date);
+  });
+
   return (
     <>
       <h2 className='past-h2'>Past Auditions</h2>
@@ -21,7 +26,7 @@ function PastAuditions() {
         <SearchBar placeholder='Enter Audition...' data={auditions} />
       </div>
       <div>
-        {auditions.map((audition) => {
+        {sortedAuditions.map((audition) => {
           if (audition.audition_complete === true) {
             return <AuditionItem key={audition.id} audition={audition} />;
           }
@@ -32,3 +37,5 @@ function PastAuditions() {
 }
 
 export default PastAuditions;
+
+// {auditions.filter().sort().map((audition) => {
