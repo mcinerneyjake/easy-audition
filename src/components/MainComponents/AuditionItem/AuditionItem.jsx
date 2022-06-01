@@ -42,9 +42,11 @@ function AuditionItem({ audition }) {
           <Card.Text>{DateTime.fromISO(audition.date).toLocaleString(DateTime.DATETIME_MED)}</Card.Text>
         </Card.Body>
         <Button onClick={getSingleAudition}>See Details</Button>
-        <Button className='mt-3' onClick={deleteAudition}>
-          Delete
-        </Button>
+        {history.location.pathname === '/user' ? null : (
+          <Button className='mt-3' onClick={deleteAudition}>
+            Delete
+          </Button>
+        )}
       </Card>
     </div>
   );
