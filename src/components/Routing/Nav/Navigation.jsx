@@ -41,6 +41,10 @@ function Navigation() {
                   <Nav.Link as={Link} to='/analytics'>
                     Audition Analytics
                   </Nav.Link>
+                  <Dropdown.Divider />
+                  <Nav.Link as={Link} to='/info'>
+                    Info
+                  </Nav.Link>
 
                   <Nav.Link onClick={() => dispatch({ type: 'LOGOUT' })}>Log Out</Nav.Link>
                 </>
