@@ -10,6 +10,7 @@ import Footer from '../Routing/Footer/Footer';
 
 import ProtectedRoute from '../Routing/ProtectedRoute/ProtectedRoute';
 
+import InfoPage from '../MainComponents/InfoPage/InfoPage';
 import AboutPage from '../MainComponents/AboutPage/AboutPage';
 import UserPage from '../MainComponents/UserPage/UserPage';
 import LandingPage from '../Log-Register/LandingPage/LandingPage';
@@ -88,6 +89,10 @@ function App() {
 
           <ProtectedRoute exact path='/analytics'>
             <AuditionAnalytics />
+          </ProtectedRoute>
+
+          <ProtectedRoute exact path='/info'>
+            <InfoPage />
           </ProtectedRoute>
 
           <Route exact path='/login'>
