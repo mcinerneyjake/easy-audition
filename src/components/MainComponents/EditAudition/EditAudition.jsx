@@ -4,6 +4,8 @@ import { useParams, useHistory } from 'react-router-dom';
 import { Accordion, Button, Form, Card, Container } from 'react-bootstrap';
 import '../AuditionForm/AuditionForm.css';
 import { DateTime } from 'luxon';
+import './EditAudition.css';
+import { MdUpdate, MdCancel } from 'react-icons/md';
 
 function EditAudition() {
   const dispatch = useDispatch();
@@ -60,7 +62,7 @@ function EditAudition() {
   return (
     <>
       <Container className='form-card-container'>
-        <Card style={{ width: '60rem' }} className='form-card p-3 mb-2 bg-secondary text-white'>
+        <Card style={{ width: '60rem' }} className='form-card p-3 mb-2 text-black edit-form-card'>
           <Card.Body>
             <Card.Title style={{ color: '#222', fontSize: '2rem' }}>Update the Audition</Card.Title>
             <Form>
@@ -139,12 +141,14 @@ function EditAudition() {
                 />
               </Form.Group>
 
-              <Container>
-                <Form.Label style={{ fontSize: '1.25rem' }}>Creative Team</Form.Label>
+              <Form.Label style={{ fontSize: '1.25rem' }} className='mb-0'>
+                Creative Team
+              </Form.Label>
+              <Container className='mt-0'>
                 <Accordion>
                   <Accordion.Item eventKey='0'>
                     <Accordion.Header>Creative Team Info</Accordion.Header>
-                    <Accordion.Body className='bg-secondary'>
+                    <Accordion.Body className='edit-form-accordion'>
                       <Form.Group className='mb-3'>
                         <Form.Label style={{ fontSize: '1.25rem' }}>Music Director</Form.Label>
                         <Form.Control
@@ -289,10 +293,10 @@ function EditAudition() {
               </Form.Group>
             </Form>
             <Button className='mx-2' variant='primary' type='submit' onClick={handleAuditionEdit}>
-              Update Audition
+              Update Audition <MdUpdate />
             </Button>
-            <Button className='mx-2' variant='primary' type='submit' onClick={() => history.push('/details')}>
-              Cancel
+            <Button className='mx-2 mt-3' variant='primary' type='submit' onClick={() => history.push('/details')}>
+              Cancel <MdCancel />
             </Button>
           </Card.Body>
         </Card>

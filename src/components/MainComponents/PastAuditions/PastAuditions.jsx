@@ -37,5 +37,3 @@ function PastAuditions() {
 }
 
 export default PastAuditions;
-
-// {auditions.filter().sort().map((audition) => {

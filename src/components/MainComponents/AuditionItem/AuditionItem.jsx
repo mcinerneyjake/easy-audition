@@ -4,6 +4,8 @@ import { Card, Button } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { DateTime } from 'luxon';
+import { BsFillTrashFill } from 'react-icons/bs';
+import { CgDetailsMore } from 'react-icons/cg';
 
 function AuditionItem({ audition }) {
   const dispatch = useDispatch();
@@ -34,17 +36,19 @@ function AuditionItem({ audition }) {
 
   return (
     <div className='card-container'>
-      <Card style={{ width: '18rem' }} className='p-3 mb-2 bg-secondary text-white audition-item-card'>
+      <Card style={{ width: '18rem' }} className='p-3 mb-2 audition-item-card'>
         <Card.Body>
           <Card.Title>{audition.show}</Card.Title>
           <Card.Subtitle>{audition.theatre}</Card.Subtitle>
           <Card.Text>{audition.location}</Card.Text>
           <Card.Text>{DateTime.fromISO(audition.date).toLocaleString(DateTime.DATETIME_MED)}</Card.Text>
         </Card.Body>
-        <Button onClick={getSingleAudition}>See Details</Button>
+        <Button className='card-button' onClick={getSingleAudition}>
+          See Details <CgDetailsMore />
+        </Button>
         {history.location.pathname === '/user' ? null : (
-          <Button className='mt-3' onClick={deleteAudition}>
-            Delete
+          <Button className='mt-3 card-button' onClick={deleteAudition}>
+            Delete <BsFillTrashFill />
           </Button>
         )}
       </Card>

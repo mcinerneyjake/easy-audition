@@ -10,16 +10,56 @@
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-/* .card:nth-child(odd) {
-  border: 10px solid RGB(255, 158, 110);
+.card {
+  color: black;
+}
 
-  RGB(255, 158, 110)
+.card-container:nth-of-type(3n + 1) .audition-item-card {
+  border: 10px solid RGB(255, 158, 110);
+  background-color: RGB(255, 158, 110);
+
+  /* RGB(255, 158, 110)
   RGB(212, 187, 227)
   RGB(155, 208, 176)
   RGB(190, 229, 239)
-  RGB(248, 224, 138)
+  RGB(248, 224, 138) */
 }
 
-.card:nth-child(even) {
+.card-container:nth-of-type(3n + 2) .audition-item-card {
   border: 10px solid RGB(212, 187, 227);
-} */
+  background-color: RGB(212, 187, 227);
+
+  /* RGB(255, 158, 110)
+  RGB(212, 187, 227)
+  RGB(155, 208, 176)
+  RGB(190, 229, 239)
+  RGB(248, 224, 138) */
+}
+
+.card-container:nth-of-type(3n + 3) .audition-item-card {
+  border: 10px solid RGB(155, 208, 176);
+  background-color: RGB(155, 208, 176);
+
+  /* RGB(255, 158, 110)
+  RGB(212, 187, 227)
+  RGB(155, 208, 176)
+  RGB(190, 229, 239)
+  RGB(248, 224, 138) */
+}
+
+.card-container:nth-of-type(3n + 4) .audition-item-card {
+  border: 10px solid RGB(190, 229, 239);
+  background-color: RGB(190, 229, 239);
+
+  /* RGB(255, 158, 110)
+  RGB(212, 187, 227)
+  RGB(155, 208, 176)
+  RGB(190, 229, 239)
+  RGB(248, 224, 138) */
+}
+
+.btn {
+  color: black;
+  background-color: RGB(248, 224, 138);
+  border: none;
+}

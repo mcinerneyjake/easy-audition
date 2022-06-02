@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Accordion, Button, Form, Card, Container } from 'react-bootstrap';
 import './AuditionForm.css';
+import { BsFillArrowRightSquareFill } from 'react-icons/bs';
 
 function AuditionForm() {
   const dispatch = useDispatch();
@@ -75,7 +76,7 @@ function AuditionForm() {
   return (
     <>
       <Container className='form-card-container'>
-        <Card style={{ width: '60rem' }} className='form-card p-3 mb-2 bg-secondary text-white'>
+        <Card style={{ width: '60rem' }} className='form-card p-3 mb-2 text-black audition-form-card'>
           <Card.Body>
             <Card.Title style={{ color: '#222', fontSize: '2rem' }}>Enter a New Audition</Card.Title>
             <Form>
@@ -134,12 +135,14 @@ function AuditionForm() {
                 />
               </Form.Group>
 
-              <Container>
-                <Form.Label style={{ fontSize: '1.25rem' }}>Creative Team</Form.Label>
+              <Form.Label style={{ fontSize: '1.25rem' }} className='mb-0'>
+                Creative Team
+              </Form.Label>
+              <Container className='mt-0'>
                 <Accordion>
                   <Accordion.Item eventKey='0'>
                     <Accordion.Header>Creative Team Info</Accordion.Header>
-                    <Accordion.Body className='bg-secondary'>
+                    <Accordion.Body className='audition-form-accordion'>
                       <Form.Group className='mb-3'>
                         <Form.Label style={{ fontSize: '1.25rem' }}>Music Director</Form.Label>
                         <Form.Control
@@ -250,7 +253,7 @@ function AuditionForm() {
               </Form.Group>
             </Form>
             <Button variant='primary' type='submit' onClick={addNewAudition}>
-              Submit
+              Submit <BsFillArrowRightSquareFill />
             </Button>
           </Card.Body>
         </Card>
