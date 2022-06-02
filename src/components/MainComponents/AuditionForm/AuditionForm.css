@@ -17,6 +17,16 @@
   justify-content: center;
 }
 
+.audition-form-card {
+  border: 10px solid RGB(212, 187, 227);
+  background-color: RGB(212, 187, 227);
+}
+
+.audition-form-accordion {
+  border: 10px solid RGB(155, 208, 176);
+  background-color: RGB(155, 208, 176);
+}
+
 .accordion-group {
   border: none;
 }

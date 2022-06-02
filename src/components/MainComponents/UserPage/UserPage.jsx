@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import LogOutButton from '../../Log-Register/LogOutButton/LogOutButton';
 import AuditionItem from '../AuditionItem/AuditionItem';
 import { useSelector, useDispatch } from 'react-redux';
+import './UserPage.css';
 
 function UserPage() {
   const dispatch = useDispatch();
@@ -15,8 +16,8 @@ function UserPage() {
   }, []);
 
   return (
-    <div className='container'>
-      <h2>Hi, {user.username}!</h2>
+    <div>
+      <h2 className='user-page-h2'>Hi, {user.username}!</h2>
       <p>Here is your next upcoming audition:</p>
       {auditions.map((audition) => {
         if (audition) {

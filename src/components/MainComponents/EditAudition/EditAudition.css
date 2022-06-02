@@ -1,0 +1,20 @@
+.form-card-container {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.edit-form-card {
+  border: 10px solid RGB(255, 158, 110);
+  background-color: RGB(255, 158, 110);
+}
+
+.edit-form-accordion {
+  border: 10px solid RGB(155, 208, 176);
+  background-color: RGB(155, 208, 176);
+}
+
+.accordion-group {
+  border: none;
+}
