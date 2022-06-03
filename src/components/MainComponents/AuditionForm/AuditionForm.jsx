@@ -89,7 +89,7 @@ function AuditionForm() {
                   type='text'
                   required
                   value={theatre}
-                  placeholder='Enter Theatre Name'
+                  placeholder='Enter Theatre Name *'
                   onChange={(event) => setTheatre(event.target.value)}
                 />
               </Form.Group>
@@ -100,7 +100,7 @@ function AuditionForm() {
                   type='text'
                   required
                   value={location}
-                  placeholder='Enter Location'
+                  placeholder='Enter Location *'
                   onChange={(event) => setLocation(event.target.value)}
                 />
               </Form.Group>
@@ -111,7 +111,7 @@ function AuditionForm() {
                   type='text'
                   required
                   value={show}
-                  placeholder='Enter Show'
+                  placeholder='Enter Show *'
                   onChange={(event) => setShow(event.target.value)}
                 />
               </Form.Group>
@@ -133,7 +133,7 @@ function AuditionForm() {
                   type='text'
                   required
                   value={director}
-                  placeholder='Enter Director'
+                  placeholder='Enter Director *'
                   onChange={(event) => setDirector(event.target.value)}
                 />
               </Form.Group>
@@ -206,7 +206,7 @@ function AuditionForm() {
                   type='text'
                   required
                   value={materialsUsed}
-                  placeholder='Enter Materials Used (Song or Monologue Name)'
+                  placeholder='Enter Materials Used *'
                   onChange={(event) => setMaterialsUsed(event.target.value)}
                 />
               </Form.Group>

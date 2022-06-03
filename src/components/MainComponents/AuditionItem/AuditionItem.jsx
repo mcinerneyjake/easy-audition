@@ -46,7 +46,7 @@ function AuditionItem({ audition }) {
         <Button className='card-button' onClick={getSingleAudition}>
           See Details <CgDetailsMore />
         </Button>
-        {history.location.pathname === '/user' ? null : (
+        {history.location.pathname === '/user' || history.location.pathname === '/past-auditions' ? null : (
           <Button className='mt-3 card-button' onClick={deleteAudition}>
             Delete <BsFillTrashFill />
           </Button>
