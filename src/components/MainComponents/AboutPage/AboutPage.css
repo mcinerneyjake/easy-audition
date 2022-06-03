@@ -10,3 +10,17 @@
 ul {
   list-style: none;
 }
+
+a {
+  text-decoration: none;
+}
+
+.github-link-container {
+  border: none;
+}
+
+.github-link {
+  margin-left: 100px;
+  margin-right: 100px;
+  padding-bottom: 5px;
+}

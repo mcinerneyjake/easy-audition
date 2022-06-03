@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card, Button } from 'react-bootstrap';
 import './AboutPage.css';
+import { BsGithub } from 'react-icons/bs';
 
 function AboutPage() {
   return (
@@ -17,6 +18,13 @@ function AboutPage() {
           gigs!
         </Card.Text>
       </Card>
+      <a href='https://github.com/mcinerneyjake'>
+        <Card className='mt-5 github-link-container'>
+          <Card.Text style={{ fontSize: '2rem' }} className='about-card-text github-link'>
+            <BsGithub />
+          </Card.Text>
+        </Card>
+      </a>
     </div>
   );
 }

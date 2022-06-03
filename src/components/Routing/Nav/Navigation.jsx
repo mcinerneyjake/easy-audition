@@ -2,6 +2,7 @@ import React from 'react';
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
 import { Navbar, Container, Nav, NavDropdown, Dropdown, NavLink, NavItem } from 'react-bootstrap';
 import { useSelector, useDispatch } from 'react-redux';
+import './Navigation.css';
 
 function Navigation() {
   const dispatch = useDispatch();
@@ -9,13 +10,13 @@ function Navigation() {
 
   return (
     <Router>
-      <Navbar bg='dark' variant='dark'>
+      <Navbar className='navbar-style'>
         <Container>
           <Navbar.Brand as={Link} to='/'>
             Easy Audition
           </Navbar.Brand>
-          <Nav className='me-auto dropdown'>
-            <NavDropdown as={NavItem} title='Menu' menuVariant='dark'>
+          <Nav className='dropdown'>
+            <NavDropdown as={NavItem} title='Menu' align='end' id='dropdown-menu-align-end'>
               {!user.id && (
                 // If there's no user, show login/registration links
                 <Nav.Link as={Link} to='/login'>
