@@ -1,11 +1,13 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 import { Accordion, Button, Form, Card, Container } from 'react-bootstrap';
 import './AuditionForm.css';
 import { BsFillArrowRightSquareFill } from 'react-icons/bs';
 
 function AuditionForm() {
   const dispatch = useDispatch();
+  const history = useHistory();
 
   const [theatre, setTheatre] = useState([]);
   const [location, setLocation] = useState([]);
@@ -71,6 +73,7 @@ function AuditionForm() {
     setCallback(false);
     setBooked(false);
     setNotes([]);
+    history.push('/upcoming-auditions');
   };
 
   return (
