@@ -5,6 +5,7 @@
 
 .info-card-text {
   background-color: RGB(181, 196, 158);
+  border: none;
 }
 
 ul {
