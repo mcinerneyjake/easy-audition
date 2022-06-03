@@ -50,9 +50,11 @@ function AuditionDetails() {
                       <Card.Text>Notes: {detail.notes}</Card.Text>
                     </Card>
                   </Card.Body>
-                  <Button onClick={goToEditAudition}>
-                    Edit <FaEdit />
-                  </Button>
+                  {detail.audition_complete ? null : (
+                    <Button onClick={goToEditAudition}>
+                      Edit <FaEdit />
+                    </Button>
+                  )}
                   <Button className='mt-3' onClick={goToAuditionsList}>
                     Go Back To Auditions <BsFillArrowLeftSquareFill />
                   </Button>

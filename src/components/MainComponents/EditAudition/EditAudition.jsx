@@ -292,12 +292,12 @@ function EditAudition() {
                 />
               </Form.Group>
             </Form>
-            <Button className='mx-2' variant='primary' type='submit' onClick={handleAuditionEdit}>
-              Update Audition <MdUpdate />
-            </Button>
-            <Button className='mx-2 mt-3' variant='primary' type='submit' onClick={() => history.push('/details')}>
-              Cancel <MdCancel />
-            </Button>
+              <Button className='mx-2' variant='primary' type='submit' onClick={handleAuditionEdit}>
+                Update Audition <MdUpdate />
+              </Button>
+              <Button className='mx-2' variant='primary' type='submit' onClick={() => history.push('/details')}>
+                Cancel <MdCancel />
+              </Button>
           </Card.Body>
         </Card>
       </Container>

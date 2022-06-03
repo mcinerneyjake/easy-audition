@@ -9,7 +9,9 @@ function InfoPage() {
           <Card.Text style={{ fontSize: '2rem' }} className='info-card-text'>
             That was:
           </Card.Text>
-          <Card.Title style={{ fontSize: '5rem' }}>Easy Audition</Card.Title>
+          <Card.Title style={{ fontSize: '5rem' }} className='easy-audition-title'>
+            Easy Audition
+          </Card.Title>
         </Card>
         <Card className='mt-5'>
           <Card.Text style={{ fontSize: '2rem' }} className='info-card-text'>
@@ -21,6 +23,7 @@ function InfoPage() {
             <p>Redux-Saga</p>
             <p>Node</p>
             <p>Express</p>
+            <p>PostgreSQL</p>
             <p>React-Bootstrap</p>
             <p>Chart.js</p>
           </Card.Text>

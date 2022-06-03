@@ -10,7 +10,7 @@ function AboutPage() {
         <Card.Text style={{ fontSize: '2rem' }} className='about-card-text'>
           Welcome to:
         </Card.Text>
-        <Card.Title style={{ fontSize: '5rem' }}>Easy Audition</Card.Title>
+        <Card.Title style={{ fontSize: '5rem' }} className='easy-audition-title'>Easy Audition</Card.Title>
       </Card>
       <Card className='mt-5'>
         <Card.Text style={{ fontSize: '2rem' }} className='about-card-text'>

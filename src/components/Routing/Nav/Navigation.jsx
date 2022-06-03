@@ -10,13 +10,13 @@ function Navigation() {
 
   return (
     <Router>
-      <Navbar className='navbar-style'>
+      <Navbar className='navbar-style' sticky='top'>
         <Container>
           <Navbar.Brand as={Link} to='/' className='navbar-title'>
             Easy Audition
           </Navbar.Brand>
           <Nav className='dropdown'>
-            <NavDropdown as={NavItem} title='Menu' align='end' id='dropdown-menu-align-end'>
+            <NavDropdown as={NavItem} title='Menu' align='end' id='dropdown-menu-align-end' autoClose='true'>
               {!user.id && (
                 // If there's no user, show login/registration links
                 <Nav.Link as={Link} to='/login'>
