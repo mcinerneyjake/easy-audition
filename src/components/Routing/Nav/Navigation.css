@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&family=Poppins:wght@300&family=Satisfy&family=Tiro+Gurmukhi&display=swap');
+
+.navbar-title {
+  font-family: 'Satisfy';
+  font-size: 2em;
+}
+
 .navbar-style {
   background-color: RGB(181, 196, 158);
 }

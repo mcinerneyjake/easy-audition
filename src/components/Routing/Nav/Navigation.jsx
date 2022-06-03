@@ -12,7 +12,7 @@ function Navigation() {
     <Router>
       <Navbar className='navbar-style'>
         <Container>
-          <Navbar.Brand as={Link} to='/'>
+          <Navbar.Brand as={Link} to='/' className='navbar-title'>
             Easy Audition
           </Navbar.Brand>
           <Nav className='dropdown'>
