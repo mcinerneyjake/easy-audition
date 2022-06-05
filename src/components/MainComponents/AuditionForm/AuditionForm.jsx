@@ -4,6 +4,7 @@ import { useHistory } from 'react-router-dom';
 import { Accordion, Button, Form, Card, Container } from 'react-bootstrap';
 import './AuditionForm.css';
 import { BsFillArrowRightSquareFill } from 'react-icons/bs';
+import { DateTime } from 'luxon';
 
 function AuditionForm() {
   const dispatch = useDispatch();
@@ -76,10 +77,28 @@ function AuditionForm() {
     history.push('/upcoming-auditions');
   };
 
+  // PRESENTATION USE ONLY ***********************************************************
+
+  const autoFillInputs = () => {
+    setTheatre("Eugene O'Neill Theatre");
+    setLocation('Pearl Studios, 500 8th Ave, New York, NY 10018');
+    setShow('Spring Awakening');
+    setDate('2022-08-14T17:00');
+    setDirector('Michael Mayer');
+    setMaterialsUsed('"Left Behind" from Spring Awakening');
+    setNotes('I cannot wait to sing for the creative team!!');
+  };
+
+  // *********************************************************************************
+
   return (
     <>
       <Container className='form-card-container'>
-        <Card style={{ width: '60rem' }} className='form-card p-3 mb-2 text-black audition-form-card'>
+        <Card
+          style={{ width: '60rem' }}
+          className='form-card p-3 mb-2 text-black audition-form-card'
+          onClick={autoFillInputs}
+        >
           <Card.Body>
             <Card.Title style={{ color: '#222', fontSize: '2rem' }}>Enter a New Audition</Card.Title>
             <Form>
