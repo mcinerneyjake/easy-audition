@@ -74,6 +74,7 @@ function AuditionForm() {
     setCallback(false);
     setBooked(false);
     setNotes([]);
+    // swal('Hello world!');
     history.push('/upcoming-auditions');
   };
 

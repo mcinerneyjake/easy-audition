@@ -22,7 +22,7 @@ import UpcomingAuditions from '../MainComponents/UpcomingAuditions/UpcomingAudit
 import PastAuditions from '../MainComponents/PastAuditions/PastAuditions';
 import EditAudition from '../MainComponents/EditAudition/EditAudition';
 import AuditionAnalytics from '../MainComponents/AuditionAnalytics/AuditionAnalytics';
-
+import swal from 'sweetalert';
 import './App.css';
 
 function App() {
