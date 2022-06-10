@@ -10,8 +10,6 @@ function AuditionAnalytics() {
   const dispatch = useDispatch();
   const auditionData = useSelector((store) => store.auditionDataReducer);
 
-  console.log('auditionData:', auditionData);
-
   useEffect(() => {
     dispatch({
       type: 'FETCH_ANALYTICS_DATA',

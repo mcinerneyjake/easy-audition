@@ -23,7 +23,7 @@ function AuditionForm() {
   const [auditionComplete, setAuditionComplete] = useState(false);
   const [callback, setCallback] = useState(false);
   const [booked, setBooked] = useState(false);
-  const [notes, setNotes] = useState([]);
+  const [notes, setNotes] = useState('N/A');
 
   const onAuditionCompleteSwitchAction = () => {
     setAuditionComplete(!auditionComplete);
