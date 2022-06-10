@@ -11,7 +11,6 @@ function BarChart({ auditionData }) {
       {
         label: 'Total Number of Auditions',
         data: auditionData.map((audition) => {
-          console.log('audition:', audition);
           return audition[0].count;
         }),
         backgroundColor: ['rgba(75,192,192,1)', '#ecf0f1', '#50AF95'],

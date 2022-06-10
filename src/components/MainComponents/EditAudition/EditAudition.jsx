@@ -14,8 +14,6 @@ function EditAudition() {
   const auditionId = params.id;
   const editAudition = useSelector((store) => store.editAuditionReducer);
 
-  console.log('editAudition.date before DateTime:', editAudition.date);
-
   useEffect(() => {
     dispatch({
       type: 'FETCH_AUDITION_TO_UPDATE',

@@ -4,7 +4,6 @@ import { put, takeLatest } from 'redux-saga/effects';
 function* fetchSingleAudition() {
   try {
     const auditions = yield axios.get('/api/auditions/single-audition');
-    console.log('GET single audition', auditions.data);
     yield put({
       type: 'SET_SINGLE_AUDITION',
       payload: auditions.data,
