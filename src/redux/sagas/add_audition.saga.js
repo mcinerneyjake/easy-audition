@@ -8,7 +8,6 @@ function* addAudition(action) {
       url: '/api/auditions',
       data: action.payload,
     });
-    console.log('action.payload of POST newAudition', action.payload);
     yield put({
       type: 'FETCH_AUDITIONS',
     });

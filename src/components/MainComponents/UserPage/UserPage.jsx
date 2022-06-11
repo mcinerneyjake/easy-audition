@@ -12,8 +12,6 @@ function UserPage() {
   const user = useSelector((store) => store.user);
   const auditions = useSelector((store) => store.singleAuditionReducer);
 
-  console.log('auditions, singleAuditionReducer:', auditions);
-
   useEffect(() => {
     dispatch({
       type: 'FETCH_CLOSEST_UPCOMING_AUDITION',
