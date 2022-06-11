@@ -17,7 +17,7 @@ Follow these steps to view Easy Audition in its optimized mobile view:
 
 ## Register and Start your Easy Audition Experience
 
-Use Easy Audition to track your upcoming auditions, aggregate and analyize your past auditions, and graphically inspect the audition data to better understand which audition materials guarantee more callbacks, more jobs, and career success. If you've got any questions about the app, please contact me at jakemcinerney1@gmail.com.
+Use Easy Audition to track your upcoming auditions, aggregate and analyze your past auditions, and graphically inspect the audition data to better understand which audition materials guarantee more callbacks, more jobs, and career success. If you've got any questions about the app, please contact me at jakemcinerney1@gmail.com.
 
 ## Built with These Tools and Frameworks:
 
