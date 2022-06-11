@@ -4,7 +4,6 @@ import { put, takeLatest } from 'redux-saga/effects';
 function* deleteAudition(action) {
   try {
     const audition = yield axios.delete(`/api/auditions/${action.payload}`);
-    console.log('DELETE audition');
     yield put({
       type: 'FETCH_AUDITIONS',
     });

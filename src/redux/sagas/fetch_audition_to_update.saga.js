@@ -5,7 +5,6 @@ function* fetchAuditionToUpdate(action) {
   try {
     const auditionId = action.payload;
     const audition = yield axios.get(`/api/auditions/${auditionId}`);
-    console.log('GET audition to update', audition.data[0]);
     const auditionData = audition.data[0];
     auditionData.date = auditionData.date.slice(0, -5);
     yield put({

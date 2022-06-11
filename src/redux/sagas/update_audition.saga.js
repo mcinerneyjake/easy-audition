@@ -4,7 +4,6 @@ import { put, takeLatest } from 'redux-saga/effects';
 function* updateAudition(action) {
   try {
     const auditionToEdit = action.payload;
-    console.log('auditionToEdit in updateAudition', auditionToEdit);
     const response = yield axios({
       method: 'PUT',
       url: `/api/auditions/${auditionToEdit.id}`,
