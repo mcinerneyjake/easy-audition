@@ -18,14 +18,12 @@ function Navigation() {
           <Nav className='dropdown'>
             <NavDropdown as={NavItem} title='Menu' align='end' id='dropdown-menu-align-end' autoClose='true'>
               {!user.id && (
-                // If there's no user, show login/registration links
                 <Nav.Link as={Link} to='/login'>
                   Login / Register
                 </Nav.Link>
               )}
 
               {user.id && (
-                // If there's a user, show links to /user and /info
                 <>
                   <Nav.Link as={Link} to='/user'>
                     Home

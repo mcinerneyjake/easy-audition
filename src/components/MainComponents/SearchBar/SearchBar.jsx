@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import AuditionItem from '../AuditionItem/AuditionItem';
 import { Card, Container } from 'react-bootstrap';
 import { BsSearch } from 'react-icons/bs';
 import './SearchBar.css';

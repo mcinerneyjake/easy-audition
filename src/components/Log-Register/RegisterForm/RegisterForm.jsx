@@ -18,7 +18,7 @@ function RegisterForm() {
         password: password,
       },
     });
-  }; // end registerUser
+  };
 
   return (
     <form className='formPanel' onSubmit={registerUser}>
