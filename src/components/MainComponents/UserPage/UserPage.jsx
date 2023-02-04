@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import LogOutButton from '../../Log-Register/LogOutButton/LogOutButton';
 import AuditionItem from '../AuditionItem/AuditionItem';
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';

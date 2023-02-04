@@ -6,7 +6,6 @@ import { Card, Container } from 'react-bootstrap';
 function BarChart({ auditionData }) {
   const chartData = {
     labels: ['Completed', 'Callbacks', 'Booked'],
-    // auditionData && auditionData.map((audition) => console.log(audition.auditionCompleteCountTotal)),
     datasets: [
       {
         label: 'Total Number of Auditions',

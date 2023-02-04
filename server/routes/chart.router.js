@@ -36,6 +36,4 @@ router.get('/', rejectUnauthenticated, async (req, res) => {
   }
 });
 
-// GET date
-
 module.exports = router;
