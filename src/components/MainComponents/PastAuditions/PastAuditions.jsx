@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import AuditionItem from '../AuditionItem/AuditionItem';
@@ -21,6 +21,8 @@ function PastAuditions() {
     history.push('/form');
   };
 
+  const [searchWord, setSearchWord] = useState('');
+
   // Sorts auditions by most recent date first.
   const sortedAuditions = auditions.sort((a, b) => {
     return new Date(b.date) - new Date(a.date);
@@ -30,14 +32,25 @@ function PastAuditions() {
     <>
       <h2 className='past-h2'>Past Auditions</h2>
       <div className='past-search-bar'>
-        <SearchBar placeholder='Enter Audition...' data={auditions} />
+        <SearchBar placeholder='Enter Audition...' setSearchWord={setSearchWord} />
       </div>
       <div>
         {auditions.length ? (
-          sortedAuditions.map((audition) => {
-            if (audition.audition_complete === true) {
-              return <AuditionItem key={audition.id} audition={audition} />;
+          sortedAuditions
+          .filter((audition) => {
+            const auditionShow = audition.show.toLowerCase().includes(searchWord.toLowerCase());
+            const auditionTheatre = audition.theatre.toLowerCase().includes(searchWord.toLowerCase());
+            if (searchWord === '') {
+              return audition;
+            } else if (auditionShow || auditionTheatre) {
+              return audition;
             }
+            // TO-DO: add a default "Oops, there aren't any auditions here!" card when a search doesn't have a match.
+          })
+            .map((audition) => {
+              if (audition.audition_complete === true) {
+                return <AuditionItem key={audition.id} audition={audition} />;
+              }
           })
         ) : (
           <>
