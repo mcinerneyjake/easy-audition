@@ -5,45 +5,32 @@ const cheerio = require('cheerio');
 
 const { rejectUnauthenticated } = require('../modules/authentication-middleware');
 
-const url = 'https://minnesotaplaylist.com/classified/auditions';
+const mnPlaylistUrl = 'https://minnesotaplaylist.com';
+
+const mnPlaylistAuditionsList = mnPlaylistUrl + '/classified/auditions';
 
 router.get('/', rejectUnauthenticated, (req, res) => {
-  axios(url)
-  .then((response) => {
-    const html = response.data;
-    const $ = cheerio.load(html);
+  axios(mnPlaylistAuditionsList)
+    .then((response) => {
+      const html = response.data;
+      const $ = cheerio.load(html);
 
-    const auditionTitle = [];
-    // const auditionDescription = [];
-    // const auditionDatesAndLocations = [];
+      const auditionTitle = [];
 
-    $('.classified-title', html).each(function() {
-      const title = $(this).text();
-      const classifiedUrl = $(this).find('a').attr('href');
-      auditionTitle.push({
-        title,
-        classifiedUrl,
+      $('.classified-title', html).each(function () {
+        const title = $(this).text();
+        const classifiedUrl = mnPlaylistUrl + $(this).find('a').attr('href');
+        auditionTitle.push({
+          title,
+          classifiedUrl,
+        });
       });
+
+      res.json(auditionTitle);
+    })
+    .catch((error) => {
+      console.log('Error in scraper axios request:', error);
     });
-
-    // $('.priceView-customer-price', html).each(function() {
-    //   const description = $(this).text();
-    //   auditionDescription.push({
-    //     description,
-    //   });
-    // });
-
-    // $('.priceView-customer-price', html).each(function() {
-    //   const datesAndLocations = $(this).text();
-    //   auditionDatesAndLocations.push({
-    //     datesAndLocations,
-    //   });
-    // });
-    res.json(auditionTitle);
-  })
-  .catch((error) => {
-    console.log('Error in scraper axios request:', error);
-  });
 });
 
 module.exports = router;
