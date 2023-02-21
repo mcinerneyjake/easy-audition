@@ -6,6 +6,7 @@ import auditionDetailsReducer from './auditionDetails.reducer';
 import singleAuditionReducer from './singleAudition.reducer';
 import editAuditionReducer from './editAudition.reducer';
 import auditionDataReducer from './auditionDataReducer.reducer';
+import classifiedsReducer from './classifieds.reducer';
 
 const rootReducer = combineReducers({
   errors, // contains registrationMessage and loginMessage
@@ -15,6 +16,7 @@ const rootReducer = combineReducers({
   singleAuditionReducer,
   editAuditionReducer,
   auditionDataReducer,
+  classifiedsReducer,
 });
 
 export default rootReducer;

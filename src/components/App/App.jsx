@@ -22,6 +22,7 @@ import UpcomingAuditions from '../MainComponents/UpcomingAuditions/UpcomingAudit
 import PastAuditions from '../MainComponents/PastAuditions/PastAuditions';
 import EditAudition from '../MainComponents/EditAudition/EditAudition';
 import AuditionAnalytics from '../MainComponents/AuditionAnalytics/AuditionAnalytics';
+import Classifieds from '../MainComponents/Classifieds/Classifieds';
 
 import './App.css';
 
@@ -72,6 +73,10 @@ function App() {
 
           <ProtectedRoute exact path='/past-auditions'>
             <PastAuditions />
+          </ProtectedRoute>
+
+          <ProtectedRoute exact path='/classifieds'>
+            <Classifieds />
           </ProtectedRoute>
 
           <ProtectedRoute exact path='/edit/:id'>
