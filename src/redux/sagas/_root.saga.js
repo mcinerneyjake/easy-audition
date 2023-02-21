@@ -10,6 +10,7 @@ import fetchSingleAuditionSaga from './fetch_single_audition.saga';
 import fetchAuditionToUpdateSaga from './fetch_audition_to_update.saga';
 import updateAuditionSaga from './update_audition.saga';
 import fetchAnalyticsSaga from './fetch_analytics.saga';
+import fetchClassifiedsSaga from './fetch_classifieds_saga';
 
 export default function* rootSaga() {
   yield all([
@@ -24,5 +25,6 @@ export default function* rootSaga() {
     fetchAuditionToUpdateSaga(),
     updateAuditionSaga(),
     fetchAnalyticsSaga(),
+    fetchClassifiedsSaga(),
   ]);
 }
