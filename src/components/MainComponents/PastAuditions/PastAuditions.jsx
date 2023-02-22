@@ -50,10 +50,10 @@ function PastAuditions() {
             }
             // TO-DO: add a default "Oops, there aren't any auditions here!" card when a search doesn't have a match.
           })
-            .map((audition) => {
-              if (audition.audition_complete === true) {
-                return <AuditionItem key={audition.id} audition={audition} />;
-              }
+          .map((audition) => {
+            if (audition.audition_complete === true) {
+              return <AuditionItem key={audition.id} audition={audition} />;
+            }
           })
         ) : (
           <>
