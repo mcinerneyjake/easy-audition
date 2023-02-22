@@ -36,7 +36,6 @@ function Classifieds() {
             }
             // TO-DO: add a default "Oops, there aren't any classifieds here!" card when a search doesn't have a match.
           })
-          
           .map((classified) => {
             return (
               <>
