@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
+import ClassifiedItem from '../ClassifiedItem/ClassifiedItem';
 import SearchBar from '../SearchBar/SearchBar';
 import './Classifieds.css';
 
@@ -38,10 +39,7 @@ function Classifieds() {
           })
           .map((classified) => {
             return (
-              <>
-                <h3>{classified.title}</h3>
-                <a href={classified.classifiedUrl}>{classified.classifiedUrl}</a>
-              </>
+              <ClassifiedItem key={classified.title} classified={classified} />
             )
           })
         ) : (

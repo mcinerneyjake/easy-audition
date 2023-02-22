@@ -1,6 +1,6 @@
 import React from 'react';
-import { HashRouter as Router, Route, Link } from 'react-router-dom';
-import { Navbar, Container, Nav, NavDropdown, Dropdown, NavLink, NavItem } from 'react-bootstrap';
+import { HashRouter as Router, Link } from 'react-router-dom';
+import { Navbar, Container, Nav, NavDropdown, Dropdown, NavItem } from 'react-bootstrap';
 import { useSelector, useDispatch } from 'react-redux';
 import './Navigation.css';
 
@@ -39,6 +39,9 @@ function Navigation() {
                   </Nav.Link>
                   <Nav.Link as={Link} to='/analytics'>
                     Audition Analytics
+                  </Nav.Link>
+                  <Nav.Link as={Link} to='/classifieds'>
+                    Classifieds
                   </Nav.Link>
                   <Dropdown.Divider />
                   <Nav.Link as={Link} to='/info'>

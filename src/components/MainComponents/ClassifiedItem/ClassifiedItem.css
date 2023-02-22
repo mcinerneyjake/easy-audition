@@ -1,0 +1,78 @@
+.card-container {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.classified-item-card {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.title-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; 
+  position: relative;
+}
+
+.title {
+  position: absolute;
+}
+
+.card-container:nth-of-type(3n + 1) .classified-item-card {
+  border: 10px solid RGB(255, 158, 110);
+  background-color: RGB(255, 158, 110);
+
+  /* RGB(255, 158, 110)
+  RGB(212, 187, 227)
+  RGB(155, 208, 176)
+  RGB(190, 229, 239)
+  RGB(248, 224, 138) */
+}
+
+.card-container:nth-of-type(3n + 2) .classified-item-card {
+  border: 10px solid RGB(212, 187, 227);
+  background-color: RGB(212, 187, 227);
+
+  /* RGB(255, 158, 110)
+  RGB(212, 187, 227)
+  RGB(155, 208, 176)
+  RGB(190, 229, 239)
+  RGB(248, 224, 138) */
+}
+
+.card-container:nth-of-type(3n + 3) .classified-item-card {
+  border: 10px solid RGB(155, 208, 176);
+  background-color: RGB(155, 208, 176);
+
+  /* RGB(255, 158, 110)
+  RGB(212, 187, 227)
+  RGB(155, 208, 176)
+  RGB(190, 229, 239)
+  RGB(248, 224, 138) */
+}
+
+.card-container:nth-of-type(3n + 4) .classified-item-card {
+  border: 10px solid RGB(190, 229, 239);
+  background-color: RGB(190, 229, 239);
+
+  /* RGB(255, 158, 110)
+  RGB(212, 187, 227)
+  RGB(155, 208, 176)
+  RGB(190, 229, 239)
+  RGB(248, 224, 138) */
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-top: 145px;
+}
+
+.button {
+  position: absolute;
+}
