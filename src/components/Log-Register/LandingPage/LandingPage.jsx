@@ -6,7 +6,7 @@ import './LandingPage.css';
 // CUSTOM COMPONENTS
 import AboutPage from '../../MainComponents/AboutPage/AboutPage';
 
-function LandingPage() {
+const LandingPage = () => {
   const history = useHistory();
 
   const onLogin = (event) => {

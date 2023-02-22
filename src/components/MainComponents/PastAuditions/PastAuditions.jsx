@@ -8,7 +8,7 @@ import AuditionItem from '../AuditionItem/AuditionItem';
 import SearchBar from '../SearchBar/SearchBar';
 import './PastAuditions.css';
 
-function PastAuditions() {
+const PastAuditions = () => {
   const dispatch = useDispatch();
   const history = useHistory();
   const auditions = useSelector((store) => store.auditionsReducer);

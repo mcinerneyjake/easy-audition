@@ -1,7 +1,7 @@
 import { Card } from 'react-bootstrap';
 import './InfoPage.css';
 
-function InfoPage() {
+const InfoPage = () => {
   return (
     <>
       <div className='info-container'>

@@ -7,7 +7,7 @@ import { DateTime } from 'luxon';
 import { BsFillTrashFill } from 'react-icons/bs';
 import { CgDetailsMore } from 'react-icons/cg';
 
-function AuditionItem({ audition }) {
+const AuditionItem = ({ audition }) => {
   const dispatch = useDispatch();
   const history = useHistory();
 

@@ -3,7 +3,7 @@ import { Card, Button } from 'react-bootstrap';
 import './AboutPage.css';
 import { BsGithub } from 'react-icons/bs';
 
-function AboutPage() {
+const AboutPage = () => {
   return (
     <div className='about-container'>
       <Card>

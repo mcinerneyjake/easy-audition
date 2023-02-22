@@ -5,7 +5,7 @@ import { Accordion, Button, Form, Card, Container } from 'react-bootstrap';
 import './AuditionForm.css';
 import { BsFillArrowRightSquareFill } from 'react-icons/bs';
 
-function AuditionForm() {
+const AuditionForm = () => {
   const dispatch = useDispatch();
   const history = useHistory();
 

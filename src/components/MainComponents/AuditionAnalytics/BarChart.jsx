@@ -3,7 +3,7 @@ import { Line, Bar } from 'react-chartjs-2';
 import Chart from 'chart.js/auto';
 import { Card, Container } from 'react-bootstrap';
 
-function BarChart({ auditionData }) {
+const BarChart = ({ auditionData }) => {
   const chartData = {
     labels: ['Completed', 'Callbacks', 'Booked'],
     datasets: [

@@ -26,7 +26,7 @@ import Classifieds from '../MainComponents/Classifieds/Classifieds';
 
 import './App.css';
 
-function App() {
+const App = () => {
   const dispatch = useDispatch();
 
   const user = useSelector((store) => store.user);

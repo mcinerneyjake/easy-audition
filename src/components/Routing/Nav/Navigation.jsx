@@ -4,7 +4,7 @@ import { Navbar, Container, Nav, NavDropdown, Dropdown, NavItem } from 'react-bo
 import { useSelector, useDispatch } from 'react-redux';
 import './Navigation.css';
 
-function Navigation() {
+const Navigation = () => {
   const dispatch = useDispatch();
   const user = useSelector((store) => store.user);
 

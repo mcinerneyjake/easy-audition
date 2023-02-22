@@ -1,7 +1,7 @@
 import { BsSearch } from 'react-icons/bs';
 import './SearchBar.css';
 
-function SearchBar({ placeholder, setSearchWord }) {
+const SearchBar = ({ placeholder, setSearchWord }) => {
   return (
     <>
       <p className='search-title'>Audition Search:</p>

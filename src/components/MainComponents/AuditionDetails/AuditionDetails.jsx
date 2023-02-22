@@ -6,7 +6,7 @@ import { DateTime } from 'luxon';
 import { BsFillArrowLeftSquareFill } from 'react-icons/bs';
 import { FaEdit } from 'react-icons/fa';
 
-function AuditionDetails() {
+const AuditionDetails = () => {
   const history = useHistory();
   const audition = useSelector((store) => store.auditionDetailsReducer);
 
