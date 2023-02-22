@@ -3,7 +3,7 @@ import { Route, Redirect } from 'react-router-dom';
 import LoginPage from '../../Log-Register/LoginPage/LoginPage';
 import { useSelector } from 'react-redux';
 
-function ProtectedRoute({ component, children, ...props }) {
+const ProtectedRoute = ({ component, children, ...props }) => {
   const user = useSelector((store) => store.user);
 
   const ProtectedComponent = component || (() => children);

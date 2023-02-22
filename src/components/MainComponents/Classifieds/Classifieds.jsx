@@ -5,7 +5,7 @@ import ClassifiedItem from '../ClassifiedItem/ClassifiedItem';
 import SearchBar from '../SearchBar/SearchBar';
 import './Classifieds.css';
 
-function Classifieds() {
+const Classifieds = () => {
   const dispatch = useDispatch();
   const classifieds = useSelector((store) => store.classifiedsReducer);
 

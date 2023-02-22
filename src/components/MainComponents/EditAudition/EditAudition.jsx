@@ -6,7 +6,7 @@ import '../AuditionForm/AuditionForm.css';
 import './EditAudition.css';
 import { MdUpdate, MdCancel } from 'react-icons/md';
 
-function EditAudition() {
+const EditAudition = () => {
   const dispatch = useDispatch();
   const history = useHistory();
   const params = useParams();

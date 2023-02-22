@@ -3,7 +3,7 @@ import LoginForm from '../LoginForm/LoginForm';
 import { useHistory } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
 
-function LoginPage() {
+const LoginPage = () => {
   const history = useHistory();
 
   return (

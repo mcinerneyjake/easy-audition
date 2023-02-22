@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import BarChart from './BarChart';
 import { Chart as ChartJS, CategoryScale, LinearScale, LineElement, Title, Tooltip, Legend } from 'chart.js';
@@ -6,7 +6,7 @@ import './AuditionAnalytics.css';
 
 ChartJS.register(CategoryScale, LinearScale, LineElement, Title, Tooltip, Legend);
 
-function AuditionAnalytics() {
+const AuditionAnalytics = () => {
   const dispatch = useDispatch();
   const auditionData = useSelector((store) => store.auditionDataReducer);
 

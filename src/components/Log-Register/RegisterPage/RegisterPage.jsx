@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom';
 import RegisterForm from '../RegisterForm/RegisterForm';
 import { Button } from 'react-bootstrap';
 
-function RegisterPage() {
+const RegisterPage = () => {
   const history = useHistory();
 
   return (

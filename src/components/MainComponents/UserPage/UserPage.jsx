@@ -5,7 +5,7 @@ import { useHistory } from 'react-router-dom';
 import './UserPage.css';
 import { Button } from 'react-bootstrap';
 
-function UserPage() {
+const UserPage = () => {
   const dispatch = useDispatch();
   const history = useHistory();
   const user = useSelector((store) => store.user);
