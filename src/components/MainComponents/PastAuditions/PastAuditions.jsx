@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+
+import { Button } from 'react-bootstrap';
+
 import AuditionItem from '../AuditionItem/AuditionItem';
 import SearchBar from '../SearchBar/SearchBar';
 import './PastAuditions.css';
-import { Button } from 'react-bootstrap';
 
 function PastAuditions() {
   const dispatch = useDispatch();
@@ -40,6 +42,7 @@ function PastAuditions() {
           .filter((audition) => {
             const auditionShow = audition.show.toLowerCase().includes(searchWord.toLowerCase());
             const auditionTheatre = audition.theatre.toLowerCase().includes(searchWord.toLowerCase());
+
             if (searchWord === '') {
               return audition;
             } else if (auditionShow || auditionTheatre) {
