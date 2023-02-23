@@ -3,19 +3,24 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import ClassifiedItem from '../ClassifiedItem/ClassifiedItem';
 import SearchBar from '../SearchBar/SearchBar';
+import Loader from '../Loader/Loader';
 import './Classifieds.css';
 
 const Classifieds = () => {
   const dispatch = useDispatch();
   const classifieds = useSelector((store) => store.classifiedsReducer);
 
+  const [loading, setLoading] = useState(true);
+  const [searchWord, setSearchWord] = useState('');
+
   useEffect(() => {
     dispatch({
       type: 'FETCH_CLASSIFIEDS',
     });
+    setTimeout(() => {
+      setLoading(false);
+    }, 1500);
   }, []);
-
-  const [searchWord, setSearchWord] = useState('');
 
   return (
     <>
@@ -24,7 +29,7 @@ const Classifieds = () => {
         <SearchBar placeholder='Enter Classified...' setSearchWord={setSearchWord} />
       </div>
       <div>
-        {classifieds.length ? (
+        {classifieds.length && !loading ? (
           classifieds
           .filter((classified) => {
             const classifiedTitle = classified.title.toLowerCase().includes(searchWord.toLowerCase());
@@ -35,17 +40,12 @@ const Classifieds = () => {
             } else if (classifiedTitle || classifiedUrl) {
               return classified;
             }
-            // TO-DO: add a default "Oops, there aren't any classifieds here!" card when a search doesn't have a match.
           })
           .map((classified) => {
-            return (
-              <ClassifiedItem key={classified.title} classified={classified} />
-            )
+              return <ClassifiedItem key={classified.title} classified={classified} />
           })
         ) : (
-          <>
-            <h3>Oops, there are no classifieds!</h3>
-          </>
+          <Loader loading={loading} />
         )}
       </div>
     </>
