@@ -13,6 +13,8 @@ const PastAuditions = () => {
   const history = useHistory();
   const auditions = useSelector((store) => store.auditionsReducer);
 
+  const [searchWord, setSearchWord] = useState('');
+
   useEffect(() => {
     dispatch({
       type: 'FETCH_AUDITIONS',
@@ -22,8 +24,6 @@ const PastAuditions = () => {
   const goToAddAudition = () => {
     history.push('/form');
   };
-
-  const [searchWord, setSearchWord] = useState('');
 
   // Sorts auditions by most recent date first.
   const sortedAuditions = auditions.sort((a, b) => {
