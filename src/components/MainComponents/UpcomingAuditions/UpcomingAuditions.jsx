@@ -13,6 +13,8 @@ const UpcomingAuditions = () => {
   const history = useHistory();
   const auditions = useSelector((store) => store.auditionsReducer);
 
+  const [searchWord, setSearchWord] = useState('');
+
   useEffect(() => {
     dispatch({
       type: 'FETCH_AUDITIONS',
@@ -22,8 +24,6 @@ const UpcomingAuditions = () => {
   const goToAddAudition = () => {
     history.push('/form');
   };
-
-  const [searchWord, setSearchWord] = useState('');
 
   return (
     <>
