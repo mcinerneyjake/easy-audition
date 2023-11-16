@@ -1,12 +1,13 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 
-const LogOutButton = (props) => {
+function LogOutButton({ className }) {
   const dispatch = useDispatch();
   return (
     <button
-      className={props.className}
+      className={className}
       onClick={() => dispatch({ type: 'LOGOUT' })}
+      type="button"
     >
       Log Out
     </button>

@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react';
-import { HashRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
+import {
+  HashRouter as Router, Redirect, Route, Switch,
+} from 'react-router-dom';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -26,7 +28,7 @@ import Classifieds from '../MainComponents/Classifieds/Classifieds';
 
 import './App.css';
 
-const App = () => {
+function App() {
   const dispatch = useDispatch();
 
   const user = useSelector((store) => store.user);
@@ -40,76 +42,76 @@ const App = () => {
       <div>
         <Navigation />
         <Switch>
-          <Redirect exact from='/' to='/home' />
+          <Redirect exact from="/" to="/home" />
 
           <Route
             exact
-            path='/about'
+            path="/about"
           >
             <AboutPage />
           </Route>
 
           <ProtectedRoute
             exact
-            path='/user'
+            path="/user"
           >
             <UserPage />
           </ProtectedRoute>
 
           <ProtectedRoute
             exact
-            path='/details'
+            path="/details"
           >
             <AuditionDetails />
           </ProtectedRoute>
 
-          <ProtectedRoute exact path='/form'>
+          <ProtectedRoute exact path="/form">
             <AuditionForm />
           </ProtectedRoute>
 
-          <ProtectedRoute exact path='/upcoming-auditions'>
+          <ProtectedRoute exact path="/upcoming-auditions">
             <UpcomingAuditions />
           </ProtectedRoute>
 
-          <ProtectedRoute exact path='/past-auditions'>
+          <ProtectedRoute exact path="/past-auditions">
             <PastAuditions />
           </ProtectedRoute>
 
-          <ProtectedRoute exact path='/classifieds'>
+          <ProtectedRoute exact path="/classifieds">
             <Classifieds />
           </ProtectedRoute>
 
-          <ProtectedRoute exact path='/edit/:id'>
+          <ProtectedRoute exact path="/edit/:id">
             <EditAudition />
           </ProtectedRoute>
 
-          <ProtectedRoute exact path='/analytics'>
+          <ProtectedRoute exact path="/analytics">
             <AuditionAnalytics />
           </ProtectedRoute>
 
-          <ProtectedRoute exact path='/info'>
+          <ProtectedRoute exact path="/info">
             <InfoPage />
           </ProtectedRoute>
 
-          <Route exact path='/login'>
+          <Route exact path="/login">
             {user.id ? (
-              <Redirect to='/user' />
+              <Redirect to="/user" />
             ) : (
               <LoginPage />
             )}
           </Route>
 
-          <Route exact path='/registration'>
+          <Route exact path="/registration">
             {user.id ? (
-              <Redirect to='/user' />
+              <Redirect to="/user" />
             ) : (
               <RegisterPage />
             )}
           </Route>
 
-          <Route exact path='/home'>
+          <Route exact path="/home">
             {user.id ? (
-              <Redirect to='/user' />
+              <Redirect to="/user" />
             ) : (
               <LandingPage />
             )}

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Button } from 'react-bootstrap';
 
-const RegisterForm = () => {
+function RegisterForm() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const errors = useSelector((store) => store.errors);
@@ -14,27 +14,27 @@ const RegisterForm = () => {
     dispatch({
       type: 'REGISTER',
       payload: {
-        username: username,
-        password: password,
+        username,
+        password,
       },
     });
   };
 
   return (
-    <form className='formPanel' onSubmit={registerUser}>
+    <form className="formPanel" onSubmit={registerUser}>
       <h2>Register User</h2>
       {errors.registrationMessage && (
-        <h3 className='alert' role='alert'>
+        <h3 className="alert" role="alert">
           {errors.registrationMessage}
         </h3>
       )}
       <div>
-        <label htmlFor='username'>
+        <label htmlFor="username">
           Username:
           <input
-            type='text'
-            name='username'
-            className='login-input'
+            type="text"
+            name="username"
+            className="login-input"
             value={username}
             required
             onChange={(event) => setUsername(event.target.value)}
@@ -42,12 +42,12 @@ const RegisterForm = () => {
         </label>
       </div>
       <div>
-        <label htmlFor='password'>
+        <label htmlFor="password">
           Password:
           <input
-            type='password'
-            name='password'
-            className='login-input'
+            type="password"
+            name="password"
+            className="login-input"
             value={password}
             required
             onChange={(event) => setPassword(event.target.value)}
@@ -55,7 +55,7 @@ const RegisterForm = () => {
         </label>
       </div>
       <div>
-        <Button className='btn mt-2' type='submit' name='submit' value='Register'>
+        <Button className="btn mt-2" type="submit" name="submit" value="Register">
           Register
         </Button>
       </div>

@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 const cookieSession = require('cookie-session');
 const warnings = require('../constants/warnings');
 
@@ -13,9 +14,9 @@ const warnings = require('../constants/warnings');
 
 const serverSessionSecret = () => {
   if (
-    !process.env.SERVER_SESSION_SECRET ||
-    process.env.SERVER_SESSION_SECRET.length < 8 ||
-    process.env.SERVER_SESSION_SECRET === warnings.exampleBadSecret
+    !process.env.SERVER_SESSION_SECRET
+    || process.env.SERVER_SESSION_SECRET.length < 8
+    || process.env.SERVER_SESSION_SECRET === warnings.exampleBadSecret
   ) {
     // Warning if user doesn't have a good secret
     console.log(warnings.badSecret);
@@ -29,6 +30,7 @@ module.exports = cookieSession({
   key: 'user', // this is the name of the req.variable. 'user' is convention, but not required
   resave: 'false',
   saveUninitialized: false,
-  maxAge: 1000 * 60 * 60 * 24 * 7, // Set to 7 days - 1000ms * 60 seconds * 60 minutes * 24 hours * 7 days
+  // Set maxAge to 7 days - 1000ms * 60 seconds * 60 minutes * 24 hours * 7 days
+  maxAge: 1000 * 60 * 60 * 24 * 7,
   secure: false,
 });

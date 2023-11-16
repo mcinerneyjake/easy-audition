@@ -1,10 +1,10 @@
 import React from 'react';
+import { Button } from 'react-bootstrap';
 
 import { useHistory } from 'react-router-dom';
 import RegisterForm from '../RegisterForm/RegisterForm';
-import { Button } from 'react-bootstrap';
 
-const RegisterPage = () => {
+function RegisterPage() {
   const history = useHistory();
 
   return (
@@ -13,8 +13,8 @@ const RegisterPage = () => {
       <p>Already Registered?</p>
       <center>
         <Button
-          type='button'
-          className='btn btn_asLink'
+          type="button"
+          className="btn btn_asLink"
           onClick={() => {
             history.push('/login');
           }}

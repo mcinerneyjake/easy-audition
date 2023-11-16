@@ -1,5 +1,6 @@
 const express = require('express');
 const pool = require('../modules/pool');
+
 const router = express.Router();
 
 const { rejectUnauthenticated } = require('../modules/authentication-middleware');
@@ -29,8 +30,13 @@ router.get('/', rejectUnauthenticated, async (req, res) => {
         `;
     const bookedAuditionCountRes = await pool.query(bookedAuditionCountQuery, sqlValues);
 
-    res.send([completedAuditionCountRes.rows, callbackAuditionCountRes.rows, bookedAuditionCountRes.rows]);
+    res.send([
+      completedAuditionCountRes.rows,
+      callbackAuditionCountRes.rows,
+      bookedAuditionCountRes.rows,
+    ]);
   } catch (error) {
+    // eslint-disable-next-line no-console
     console.log('Error in GET /chart', error);
     res.sendStatus(500);
   }
