@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Button } from 'react-bootstrap';
 
-const LoginForm = () => {
+function LoginForm() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const errors = useSelector((store) => store.errors);
@@ -16,8 +15,8 @@ const LoginForm = () => {
       dispatch({
         type: 'LOGIN',
         payload: {
-          username: username,
-          password: password,
+          username,
+          password,
         },
       });
     } else {
@@ -26,19 +25,19 @@ const LoginForm = () => {
   };
 
   return (
-    <form className='formPanel' onSubmit={login}>
+    <form className="formPanel" onSubmit={login}>
       <h2>Login</h2>
       {errors.loginMessage && (
-        <h3 className='alert' role='alert'>
+        <h3 className="alert" role="alert">
           {errors.loginMessage}
         </h3>
       )}
       <div>
-        <label htmlFor='username'>
+        <label htmlFor="username">
           Username:
           <input
-            type='text'
-            name='username'
+            type="text"
+            name="username"
             required
             value={username}
             onChange={(event) => setUsername(event.target.value)}
@@ -46,11 +45,11 @@ const LoginForm = () => {
         </label>
       </div>
       <div>
-        <label htmlFor='password'>
+        <label htmlFor="password">
           Password:
           <input
-            type='password'
-            name='password'
+            type="password"
+            name="password"
             required
             value={password}
             onChange={(event) => setPassword(event.target.value)}
@@ -58,7 +57,7 @@ const LoginForm = () => {
         </label>
       </div>
       <div>
-        <Button className='btn mt-2' type='submit' name='submit' value='Log In'>
+        <Button className="btn mt-2" type="submit" name="submit" value="Log In">
           Log In
         </Button>
       </div>

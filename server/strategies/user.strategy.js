@@ -56,7 +56,7 @@ passport.use(
         // this will result in the server returning a 500 status code
         done(error, null);
       });
-  })
+  }),
 );
 
 module.exports = passport;

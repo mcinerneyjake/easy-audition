@@ -6,7 +6,7 @@ import SearchBar from '../SearchBar/SearchBar';
 import Loader from '../Loader/Loader';
 import './Classifieds.css';
 
-const Classifieds = () => {
+function Classifieds() {
   const dispatch = useDispatch();
   const classifieds = useSelector((store) => store.classifiedsReducer);
 
@@ -24,26 +24,28 @@ const Classifieds = () => {
 
   return (
     <>
-      <h2 className='classifieds-h2'>Classifieds</h2>
-      <div className='classifieds-search-bar'>
-        <SearchBar placeholder='Enter Classified...' setSearchWord={setSearchWord} />
+      <h2 className="classifieds-h2">Classifieds</h2>
+      <div className="classifieds-search-bar">
+        <SearchBar placeholder="Enter Classified..." setSearchWord={setSearchWord} />
       </div>
       <div>
         {classifieds.length && !loading ? (
           classifieds
-          .filter((classified) => {
-            const classifiedTitle = classified.title.toLowerCase().includes(searchWord.toLowerCase());
-            const classifiedUrl = classified.classifiedUrl.toLowerCase().includes(searchWord.toLowerCase());
+            .filter((classified) => {
+              const classifiedTitle = classified.title.toLowerCase()
+                .includes(searchWord.toLowerCase());
 
-            if (searchWord === '') {
-              return classified;
-            } else if (classifiedTitle || classifiedUrl) {
-              return classified;
-            }
-          })
-          .map((classified) => {
-              return <ClassifiedItem key={classified.title} classified={classified} />
-          })
+              const classifiedUrl = classified.classifiedUrl.toLowerCase()
+                .includes(searchWord.toLowerCase());
+
+              if (searchWord === '') {
+                return classified;
+              }
+              if (classifiedTitle || classifiedUrl) {
+                return classified;
+              }
+            })
+            .map((classified) => <ClassifiedItem key={classified.title} classified={classified} />)
         ) : (
           <Loader loading={loading} />
         )}

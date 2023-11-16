@@ -1,15 +1,19 @@
 import React, { useEffect } from 'react';
-import AuditionItem from '../AuditionItem/AuditionItem';
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import './UserPage.css';
 import { Button } from 'react-bootstrap';
 
-const UserPage = () => {
+import AuditionItem from '../AuditionItem/AuditionItem';
+
+import './UserPage.css';
+
+function UserPage() {
   const dispatch = useDispatch();
   const history = useHistory();
   const user = useSelector((store) => store.user);
   const auditions = useSelector((store) => store.singleAuditionReducer);
+
+  const { username } = user;
 
   useEffect(() => {
     dispatch({
@@ -23,12 +27,12 @@ const UserPage = () => {
 
   return (
     <div>
-      <h2 className='user-page-h2'>Hi, {user.username}!</h2>
+      <h2 className="user-page-h2">
+        {`Hi, ${username}!`}
+      </h2>
       <p>Here is your next upcoming audition:</p>
       {auditions.length ? (
-        auditions.map((audition) => {
-          return <AuditionItem key={audition.id} audition={audition} />;
-        })
+        auditions.map((audition) => <AuditionItem key={audition.id} audition={audition} />)
       ) : (
         <>
           <h3>Oops, there are no auditions here yet!</h3>

@@ -8,7 +8,7 @@ import AuditionItem from '../AuditionItem/AuditionItem';
 import SearchBar from '../SearchBar/SearchBar';
 import './UpcomingAuditions.css';
 
-const UpcomingAuditions = () => {
+function UpcomingAuditions() {
   const dispatch = useDispatch();
   const history = useHistory();
   const auditions = useSelector((store) => store.auditionsReducer);
@@ -27,33 +27,38 @@ const UpcomingAuditions = () => {
 
   return (
     <>
-      <h2 className='upcoming-h2'>Upcoming Auditions</h2>
-      <div className='upcoming-search-bar'>
-        <SearchBar placeholder='Enter Audition...' setSearchWord={setSearchWord} />
+      <h2 className="upcoming-h2">Upcoming Auditions</h2>
+      <div className="upcoming-search-bar">
+        <SearchBar placeholder="Enter Audition..." setSearchWord={setSearchWord} />
       </div>
       {auditions.length ? (
         auditions
           .filter((audition) => {
-            const auditionShow = audition.show.toLowerCase().includes(searchWord.toLowerCase());
-            const auditionTheatre = audition.theatre.toLowerCase().includes(searchWord.toLowerCase());
+            const auditionShow = audition.show.toLowerCase()
+              .includes(searchWord.toLowerCase());
+            const auditionTheatre = audition.theatre.toLowerCase()
+              .includes(searchWord.toLowerCase());
 
             if (searchWord === '') {
               return audition;
-            } else if (auditionShow || auditionTheatre) {
+            }
+            if (auditionShow || auditionTheatre) {
               return audition;
             }
-            // TO-DO: add a default "Oops, there aren't any auditions here!" card when a search doesn't have a match.
-          })
+            /* TO-DO:
+              Add a default message of:
+              "Oops, there aren't any auditions here!" when a search doesn't have a match.
+            */ })
           .map((audition) => {
             if (audition.audition_complete === false) {
               return <AuditionItem key={audition.id} audition={audition} />;
             }
           })
-        ) : (
-          <>
-            <h3>Oops, there are no auditions here yet!</h3>
-            <Button onClick={goToAddAudition}>Add a New Audition</Button>
-          </>
+      ) : (
+        <>
+          <h3>Oops, there are no auditions here yet!</h3>
+          <Button onClick={goToAddAudition}>Add a New Audition</Button>
+        </>
       )}
     </>
   );

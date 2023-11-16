@@ -1,13 +1,14 @@
 const express = require('express');
-const router = express.Router();
 const axios = require('axios');
 const cheerio = require('cheerio');
+
+const router = express.Router();
 
 const { rejectUnauthenticated } = require('../modules/authentication-middleware');
 
 const mnPlaylistUrl = 'https://minnesotaplaylist.com';
 
-const mnPlaylistAuditionsList = mnPlaylistUrl + '/classified/auditions';
+const mnPlaylistAuditionsList = `${mnPlaylistUrl}/classified/auditions`;
 
 router.get('/', rejectUnauthenticated, (req, res) => {
   axios(mnPlaylistAuditionsList)
@@ -17,7 +18,7 @@ router.get('/', rejectUnauthenticated, (req, res) => {
 
       const auditionTitle = [];
 
-      $('.classified-title', html).each(function () {
+      $('.classified-title', html).each(() => {
         const title = $(this).text();
         const classifiedUrl = mnPlaylistUrl + $(this).find('a').attr('href');
         auditionTitle.push({
@@ -29,6 +30,7 @@ router.get('/', rejectUnauthenticated, (req, res) => {
       res.json(auditionTitle);
     })
     .catch((error) => {
+      // eslint-disable-next-line no-console
       console.log('Error in scraper axios request:', error);
     });
 });

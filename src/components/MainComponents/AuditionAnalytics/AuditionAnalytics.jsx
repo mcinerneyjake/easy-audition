@@ -1,12 +1,20 @@
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend,
+} from 'chart.js';
 import BarChart from './BarChart';
-import { Chart as ChartJS, CategoryScale, LinearScale, LineElement, Title, Tooltip, Legend } from 'chart.js';
 import './AuditionAnalytics.css';
 
 ChartJS.register(CategoryScale, LinearScale, LineElement, Title, Tooltip, Legend);
 
-const AuditionAnalytics = () => {
+function AuditionAnalytics() {
   const dispatch = useDispatch();
   const auditionData = useSelector((store) => store.auditionDataReducer);
 
@@ -18,7 +26,7 @@ const AuditionAnalytics = () => {
 
   return (
     <div>
-      <h2 className='audition-analytics-h2'>Audition Analytics</h2>
+      <h2 className="audition-analytics-h2">Audition Analytics</h2>
       {auditionData.length ? <BarChart auditionData={auditionData} /> : 'error'}
     </div>
   );

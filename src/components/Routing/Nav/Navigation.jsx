@@ -1,50 +1,58 @@
 import React from 'react';
 import { HashRouter as Router, Link } from 'react-router-dom';
-import { Navbar, Container, Nav, NavDropdown, Dropdown, NavItem } from 'react-bootstrap';
+import {
+  Navbar,
+  Container,
+  Nav,
+  NavDropdown,
+  Dropdown,
+  NavItem,
+} from 'react-bootstrap';
 import { useSelector, useDispatch } from 'react-redux';
+
 import './Navigation.css';
 
-const Navigation = () => {
+function Navigation() {
   const dispatch = useDispatch();
   const user = useSelector((store) => store.user);
 
   return (
     <Router>
-      <Navbar className='navbar-style' sticky='top'>
+      <Navbar className="navbar-style" sticky="top">
         <Container>
-          <Navbar.Brand as={Link} to='/' className='navbar-title'>
+          <Navbar.Brand as={Link} to="/" className="navbar-title">
             Easy Audition
           </Navbar.Brand>
-          <Nav className='dropdown'>
-            <NavDropdown as={NavItem} title='Menu' align='end' id='dropdown-menu-align-end' autoClose='true'>
+          <Nav className="dropdown">
+            <NavDropdown as={NavItem} title="Menu" align="end" id="dropdown-menu-align-end" autoClose="true">
               {!user.id && (
-                <Nav.Link as={Link} to='/login'>
+                <Nav.Link as={Link} to="/login">
                   Login / Register
                 </Nav.Link>
               )}
 
               {user.id && (
                 <>
-                  <Nav.Link as={Link} to='/user'>
+                  <Nav.Link as={Link} to="/user">
                     Home
                   </Nav.Link>
-                  <Nav.Link as={Link} to='/upcoming-auditions'>
+                  <Nav.Link as={Link} to="/upcoming-auditions">
                     Upcoming Auditions
                   </Nav.Link>
-                  <Nav.Link as={Link} to='/past-auditions'>
+                  <Nav.Link as={Link} to="/past-auditions">
                     Past Auditions
                   </Nav.Link>
-                  <Nav.Link as={Link} to='/form'>
+                  <Nav.Link as={Link} to="/form">
                     Add Audition
                   </Nav.Link>
-                  <Nav.Link as={Link} to='/analytics'>
+                  <Nav.Link as={Link} to="/analytics">
                     Audition Analytics
                   </Nav.Link>
-                  <Nav.Link as={Link} to='/classifieds'>
+                  <Nav.Link as={Link} to="/classifieds">
                     Classifieds
                   </Nav.Link>
                   <Dropdown.Divider />
-                  <Nav.Link as={Link} to='/info'>
+                  <Nav.Link as={Link} to="/info">
                     Info
                   </Nav.Link>
 
@@ -52,7 +60,7 @@ const Navigation = () => {
                 </>
               )}
               <Dropdown.Divider />
-              <Nav.Link as={Link} to='/about'>
+              <Nav.Link as={Link} to="/about">
                 About
               </Nav.Link>
             </NavDropdown>
