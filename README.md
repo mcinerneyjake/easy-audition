@@ -3,7 +3,7 @@
 
 Easy Audition is the app for actors to take control of their careers, analyze their auditions, and book more gigs!
 
-## To see the fully functional site, please visit: https://guarded-meadow-95428.herokuapp.com/
+## ~~To see the fully functional site, please visit: https://guarded-meadow-95428.herokuapp.com/~~ Due to Heroku discontinuing their free tier, this link is no longer active. An update is in process.
 
 ## Optimized for Mobile View
 
